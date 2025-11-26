@@ -1,28 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
-
-const DATA_FILE = path.join(process.cwd(), "data", "subscribers.json");
-
-interface Subscriber {
-  email: string;
-  subscribedAt: string;
-}
-
-async function getSubscribers(): Promise<Subscriber[]> {
-  try {
-    const data = await fs.readFile(DATA_FILE, "utf-8");
-    return JSON.parse(data);
-  } catch {
-    return [];
-  }
-}
-
-async function saveSubscribers(subscribers: Subscriber[]): Promise<void> {
-  const dir = path.dirname(DATA_FILE);
-  await fs.mkdir(dir, { recursive: true });
-  await fs.writeFile(DATA_FILE, JSON.stringify(subscribers, null, 2));
-}
 
 export async function POST(request: NextRequest) {
   try {
@@ -44,27 +20,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get existing subscribers
-    const subscribers = await getSubscribers();
-
-    // Check if already subscribed
-    const exists = subscribers.some(
-      (sub) => sub.email.toLowerCase() === email.toLowerCase()
-    );
-    if (exists) {
-      return NextResponse.json(
-        { error: "Email already subscribed" },
-        { status: 409 }
-      );
-    }
-
-    // Add new subscriber
-    subscribers.push({
+    // Log the email for now - connect to email service later
+    // Options: Vercel KV, Vercel Postgres, Formspree, EmailOctopus, ConvertKit, etc.
+    console.log("New subscriber:", {
       email: email.toLowerCase(),
       subscribedAt: new Date().toISOString(),
     });
 
-    await saveSubscribers(subscribers);
+    // TODO: Connect to email service
+    // Example with Formspree:
+    // await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ email }),
+    // });
 
     return NextResponse.json(
       { message: "Successfully subscribed!" },
@@ -73,17 +42,13 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Subscription error:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }
 }
 
 export async function GET() {
-  try {
-    const subscribers = await getSubscribers();
-    return NextResponse.json({ count: subscribers.length });
-  } catch {
-    return NextResponse.json({ count: 0 });
-  }
+  // Return a placeholder count for now
+  return NextResponse.json({ count: 0 });
 }
