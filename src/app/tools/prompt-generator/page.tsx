@@ -91,7 +91,7 @@ export default function PromptGeneratorPage() {
                     id="purpose"
                     value={purpose}
                     onChange={(e) => setPurpose(e.target.value)}
-                    className="mt-2 block w-full cursor-pointer appearance-auto rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
+                    className="mt-2 block w-full cursor-pointer rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
                   >
                     <option value="">Select a purpose...</option>
                     {purposes.map((p) => (
@@ -114,7 +114,7 @@ export default function PromptGeneratorPage() {
                     id="aiTool"
                     value={aiTool}
                     onChange={(e) => setAiTool(e.target.value)}
-                    className="mt-2 block w-full cursor-pointer appearance-auto rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
+                    className="mt-2 block w-full cursor-pointer rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
                   >
                     <option value="">Select an AI tool...</option>
                     {aiTools.map((tool) => (
