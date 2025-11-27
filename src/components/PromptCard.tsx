@@ -12,12 +12,36 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   const [expanded, setExpanded] = useState(false);
 
   const copyToClipboard = async () => {
+    const text = prompt.prompt;
+
+    // Try modern clipboard API first
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      try {
+        await navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        return;
+      } catch (err) {
+        console.error("Clipboard API failed:", err);
+      }
+    }
+
+    // Fallback: create a temporary textarea
     try {
-      await navigator.clipboard.writeText(prompt.prompt);
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error("Failed to copy:", err);
+      console.error("Fallback copy failed:", err);
     }
   };
 
