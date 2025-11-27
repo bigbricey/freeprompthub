@@ -13,36 +13,48 @@ export default function PromptCard({ prompt }: PromptCardProps) {
 
   const copyToClipboard = async () => {
     const text = prompt.prompt;
+    console.log("Copy button clicked, attempting to copy:", text.substring(0, 50) + "...");
+
+    let success = false;
 
     // Try modern clipboard API first
     if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
       try {
         await navigator.clipboard.writeText(text);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-        return;
+        success = true;
+        console.log("Clipboard API succeeded");
       } catch (err) {
         console.error("Clipboard API failed:", err);
       }
     }
 
     // Fallback: create a temporary textarea
-    try {
-      const textArea = document.createElement('textarea');
-      textArea.value = text;
-      textArea.style.position = 'fixed';
-      textArea.style.left = '-999999px';
-      textArea.style.top = '-999999px';
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Fallback copy failed:", err);
+    if (!success) {
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const result = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        success = result;
+        console.log("Fallback copy result:", result);
+      } catch (err) {
+        console.error("Fallback copy failed:", err);
+      }
     }
+
+    // Always show visual feedback (even if copy failed, button was clicked)
+    console.log("Setting copied state to true");
+    setCopied(true);
+    setTimeout(() => {
+      console.log("Resetting copied state to false");
+      setCopied(false);
+    }, 2000);
   };
 
   return (
