@@ -1,0 +1,86 @@
+[
+  {
+    "id": "saas-1",
+    "title": "MRR Growth Forecaster",
+    "description": "Model your SaaS growth and revenue scenarios",
+    "prompt": "Create a SaaS revenue forecast model.\n\nCurrent MRR: [AMOUNT]\nGrowth Rate: [PERCENT]\nChurn Rate: [PERCENT]\nTimeframe: [12/24 Months]\n\nCalculate:\n1. Monthly MRR progression\n2. Total ARR by end of period\n3. Impact of reducing churn by 1%\n4. Impact of increasing growth by 5%\n\nProvide a summary of the \"Best Case\" vs \"Worst Case\" scenarios.",
+    "category": "saas",
+    "tags": [
+      "SaaS",
+      "finance",
+      "growth"
+    ]
+  },
+  {
+    "id": "saas-2",
+    "title": "Feature Prioritization Matrix (RICE)",
+    "description": "Decide what to build next using the RICE framework",
+    "prompt": "Help me prioritize these features using the RICE score.\n\nFeatures: [LIST FEATURES]\n\nFor each, estimate (1-10 scale):\n- Reach (How many users will it impact?)\n- Impact (How much will it help them?)\n- Confidence (How sure are we?)\n- Effort (How hard is it to build? - Inverse score)\n\nCalculate RICE Score = (Reach x Impact x Confidence) / Effort.\nRank them from highest to lowest.",
+    "category": "saas",
+    "tags": [
+      "SaaS",
+      "product",
+      "strategy"
+    ]
+  },
+  {
+    "id": "saas-3",
+    "title": "User Onboarding Flow Designer",
+    "description": "Design a friction-free onboarding experience",
+    "prompt": "Design a user onboarding flow for [PRODUCT].\n\nGoal: Get user to [AHA MOMENT] in < 5 minutes.\n\nSteps:\n1. Sign-up (Fields to ask)\n2. Welcome Screen (Value prop)\n3. Setup Wizard (Critical steps only)\n4. The \"First Win\" action\n5. Email 1 trigger\n\nIdentify potential friction points to remove.",
+    "category": "saas",
+    "tags": [
+      "SaaS",
+      "UX",
+      "onboarding"
+    ]
+  },
+  {
+    "id": "saas-4",
+    "title": "Competitor Analysis Battlecard",
+    "description": "Analyze competitors to find your edge",
+    "prompt": "Create a competitor battlecard for [COMPETITOR].\n\nMy Product: [NAME]\nCompetitor: [NAME]\n\nCompare:\n1. Pricing (Cheaper/More expensive?)\n2. Key Features (What do they have that we don't?)\n3. Weaknesses (What do users complain about?)\n4. Our Unique Selling Proposition (Where we win)\n5. \"Kill Shot\" argument (One sentence to win the deal)",
+    "category": "saas",
+    "tags": [
+      "SaaS",
+      "strategy",
+      "sales"
+    ]
+  },
+  {
+    "id": "saas-5",
+    "title": "SaaS Pricing Strategy Generator",
+    "description": "Optimize your pricing tiers for maximum revenue",
+    "prompt": "Develop a pricing strategy for [PRODUCT].\n\nValue Metric: [Seats/Usage/Features]\nTarget Customer: [SMB/Enterprise]\n\nCreate 3 Tiers:\n1. Starter (Low barrier to entry)\n2. Pro (The \"Sweet Spot\" - most value)\n3. Enterprise (Custom/High touch)\n\nDefine features, limits, and price points for each. Explain the psychology behind the structure.",
+    "category": "saas",
+    "tags": [
+      "SaaS",
+      "pricing",
+      "business"
+    ]
+  },
+  {
+    "id": "saas-6",
+    "title": "Churn Survey Analyzer",
+    "description": "Understand why users leave to fix the bucket",
+    "prompt": "Analyze these churn reasons and suggest fixes.\n\nReasons:\n1. \"Too expensive\" (40%)\n2. \"Missing feature X\" (30%)\n3. \"Hard to use\" (20%)\n4. \"Project ended\" (10%)\n\nFor each:\n- Is it a product, pricing, or positioning issue?\n- What is the immediate fix?\n- What is the long-term fix?",
+    "category": "saas",
+    "tags": [
+      "SaaS",
+      "retention",
+      "analytics"
+    ]
+  },
+  {
+    "id": "saas-7",
+    "title": "Product Launch Checklist",
+    "description": "Don't miss a step when shipping new features",
+    "prompt": "Create a checklist for launching [FEATURE].\n\nTeams involved: Product, Eng, Marketing, Support.\n\nItems:\n- Technical (QA, Deployment)\n- Marketing (Blog, Email, Social)\n- Enablement (Help docs, Internal training)\n- Success (Metrics to track)\n\nTimeline: T-minus 2 weeks to Launch Day.",
+    "category": "saas",
+    "tags": [
+      "SaaS",
+      "product",
+      "launch"
+    ]
+  }
+]

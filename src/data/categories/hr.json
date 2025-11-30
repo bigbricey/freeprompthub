@@ -1,0 +1,86 @@
+[
+  {
+    "id": "hr-1",
+    "title": "Job Description Generator",
+    "description": "Write inclusive, attractive job descriptions",
+    "prompt": "Write a job description for a [JOB TITLE].\n\nCompany Culture: [DESCRIBE CULTURE]\nKey Responsibilities: [LIST 3-5]\nRequired Skills: [LIST SKILLS]\n\nSections:\n1. Engaging Role Summary (The \"Why\")\n2. What You'll Do (Responsibilities)\n3. What You Bring (Requirements)\n4. Benefits & Perks\n5. DEI Statement\n\nUse gender-neutral language and focus on growth potential.",
+    "category": "hr",
+    "tags": [
+      "hr",
+      "hiring",
+      "recruiting"
+    ]
+  },
+  {
+    "id": "hr-2",
+    "title": "Performance Review Writer",
+    "description": "Draft constructive performance reviews",
+    "prompt": "Draft a performance review for an employee.\n\nRole: [ROLE]\nRating: [Exceeds/Meets/Needs Improvement]\nKey Achievements: [LIST]\nAreas for Growth: [LIST]\n\nStructure:\n1. Overall Summary\n2. Strengths (Specific examples)\n3. Areas for Development (Actionable feedback)\n4. Goals for next quarter\n\nTone: Constructive, supportive, and objective.",
+    "category": "hr",
+    "tags": [
+      "hr",
+      "management",
+      "feedback"
+    ]
+  },
+  {
+    "id": "hr-3",
+    "title": "Interview Question Bank",
+    "description": "Structured interview questions to assess skills and culture",
+    "prompt": "Create an interview guide for [ROLE].\n\nCompetencies to assess: [Leadership, Python, Teamwork]\n\nProvide:\n1. Icebreaker question\n2. 3 Behavioral questions (STAR method)\n3. 2 Situational questions\n4. 2 Culture fit questions\n5. Evaluation rubric (What a \"Good\" vs \"Bad\" answer looks like)",
+    "category": "hr",
+    "tags": [
+      "hr",
+      "hiring",
+      "interviewing"
+    ]
+  },
+  {
+    "id": "hr-4",
+    "title": "Onboarding Checklist Creator",
+    "description": "Ensure new hires have a great Day 1",
+    "prompt": "Create a 30-60-90 day onboarding plan for a [ROLE].\n\nGoal: Full productivity by Day 90.\n\nPhases:\n- Pre-boarding (Paperwork, Tech setup)\n- Week 1 (Culture, Team intros, Tools)\n- Month 1 (First small project, Learning)\n- Month 2 (Independence, Larger project)\n- Month 3 (Full ownership, Review)\n\nInclude key milestones for each phase.",
+    "category": "hr",
+    "tags": [
+      "hr",
+      "onboarding",
+      "management"
+    ]
+  },
+  {
+    "id": "hr-5",
+    "title": "Employee Handbook Policy Drafter",
+    "description": "Write clear, compliant company policies",
+    "prompt": "Draft a [POLICY NAME, e.g., Remote Work] policy.\n\nCompany Stance: [Flexible/Hybrid/Strict]\nKey Rules: [Core hours, Equipment provided, Eligibility]\n\nSections:\n1. Purpose\n2. Scope (Who it applies to)\n3. Policy Details\n4. Procedures (How to request/report)\n5. Exceptions\n\nTone: Professional but human.",
+    "category": "hr",
+    "tags": [
+      "hr",
+      "policy",
+      "compliance"
+    ]
+  },
+  {
+    "id": "hr-6",
+    "title": "Difficult Conversation Script",
+    "description": "Scripts for PIPs, layoffs, or conflict resolution",
+    "prompt": "Write a script for a manager having a difficult conversation.\n\nTopic: [Performance Issue/Layoff/Behavior]\nEmployee: [NAME]\nContext: [Details of situation]\n\nScript steps:\n1. The Setup (Private, direct)\n2. The Statement (Facts, not emotions)\n3. The Impact (Why it matters)\n4. The Listen (Give space to respond)\n5. The Plan (Next steps/PIP details)\n\nTone: Empathetic but firm.",
+    "category": "hr",
+    "tags": [
+      "hr",
+      "management",
+      "communication"
+    ]
+  },
+  {
+    "id": "hr-7",
+    "title": "Employee Engagement Survey",
+    "description": "Measure pulse and culture with strategic questions",
+    "prompt": "Design an employee engagement survey.\n\nGoal: Measure [Satisfaction/Burnout/Culture]\nLength: 10 questions max.\n\nQuestion types:\n- Likert scale (1-5)\n- Open-ended\n\nTopics:\n- Management support\n- Career growth\n- Work-life balance\n- Tools & Resources\n- eNPS (Net Promoter Score)",
+    "category": "hr",
+    "tags": [
+      "hr",
+      "culture",
+      "feedback"
+    ]
+  }
+]

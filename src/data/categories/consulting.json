@@ -1,0 +1,86 @@
+[
+  {
+    "id": "cons-1",
+    "title": "Consulting Proposal Generator",
+    "description": "Write winning proposals for high-ticket clients",
+    "prompt": "Write a consulting proposal for [PROJECT].\n\nClient: [CLIENT]\nProblem: [PROBLEM]\n\nStructure:\n1. Situation Appraisal (We understand your pain)\n2. Objectives (What success looks like)\n3. Methodology (How we will do it)\n4. Timeline & Deliverables\n5. Investment (Fees)\n6. Terms\n\nTone: Professional, authoritative, value-focused.",
+    "category": "consulting",
+    "tags": [
+      "consulting",
+      "sales",
+      "proposals"
+    ]
+  },
+  {
+    "id": "cons-2",
+    "title": "SWOT Analysis Builder",
+    "description": "Strategic analysis for business planning",
+    "prompt": "Perform a SWOT analysis for [COMPANY/PROJECT].\n\nContext: [INDUSTRY/SITUATION]\n\nGrid:\n- Strengths (Internal/Positive)\n- Weaknesses (Internal/Negative)\n- Opportunities (External/Positive)\n- Threats (External/Negative)\n\nStrategic Recommendations: How to use Strengths to capture Opportunities and mitigate Threats.",
+    "category": "consulting",
+    "tags": [
+      "consulting",
+      "strategy",
+      "analysis"
+    ]
+  },
+  {
+    "id": "cons-3",
+    "title": "Change Management Plan",
+    "description": "Guide organizations through difficult transitions",
+    "prompt": "Create a Change Management Plan for [CHANGE, e.g., New Software Rollout].\n\nStakeholders: [Employees, Managers, IT]\n\nPhases (ADKAR Model):\n1. Awareness (Why change?)\n2. Desire (What's in it for me?)\n3. Knowledge (Training)\n4. Ability (Support/Resources)\n5. Reinforcement (Sustaining the change)\n\nCommunication plan for each phase.",
+    "category": "consulting",
+    "tags": [
+      "consulting",
+      "change management",
+      "strategy"
+    ]
+  },
+  {
+    "id": "cons-4",
+    "title": "Workshop Agenda Designer",
+    "description": "Plan engaging and productive workshops",
+    "prompt": "Design a 4-hour workshop agenda for [TOPIC].\n\nGoal: [OUTCOME, e.g., Define Strategy]\nAttendees: [WHO]\n\nAgenda:\n- Icebreaker (15m)\n- Module 1: Context/Learning (45m)\n- Activity 1: Brainstorming (30m)\n- Break (15m)\n- Module 2: Selection/Refinement (45m)\n- Activity 2: Action Planning (45m)\n- Closing/Next Steps (15m)\n\nInclude materials needed.",
+    "category": "consulting",
+    "tags": [
+      "consulting",
+      "workshops",
+      "facilitation"
+    ]
+  },
+  {
+    "id": "cons-5",
+    "title": "Market Research Brief",
+    "description": "Scope out research projects effectively",
+    "prompt": "Write a brief for a market research project.\n\nTopic: [MARKET/TREND]\nGoal: [Validate product idea/Understand competitor]\n\nQuestions to Answer:\n1. Market Size (TAM)\n2. Growth Trends (CAGR)\n3. Key Competitors\n4. Customer Segments\n5. Regulatory Environment\n\nSources to target: Industry reports, interviews, surveys.",
+    "category": "consulting",
+    "tags": [
+      "consulting",
+      "research",
+      "strategy"
+    ]
+  },
+  {
+    "id": "cons-6",
+    "title": "Executive Summary Writer",
+    "description": "Condense complex reports into one-page summaries",
+    "prompt": "Summarize this report into a 1-page Executive Summary.\n\nAudience: CEO/Board\n\nReport Content:\n[PASTE CONTENT OR KEY POINTS]\n\nStructure:\n1. The Ask/Decision needed\n2. Background (Brief)\n3. Key Findings (Bullet points)\n4. Financial Impact\n5. Recommendation\n\nKeep it under 500 words.",
+    "category": "consulting",
+    "tags": [
+      "consulting",
+      "writing",
+      "reporting"
+    ]
+  },
+  {
+    "id": "cons-7",
+    "title": "Project Post-Mortem Template",
+    "description": "Learn from past projects to improve future ones",
+    "prompt": "Facilitate a project post-mortem (retrospective).\n\nProject: [NAME]\nOutcome: [Success/Failure/Mixed]\n\nQuestions:\n1. What went well? (Keep doing)\n2. What went wrong? (Stop doing)\n3. What was lucky? (Don't rely on next time)\n4. What was missing? (Start doing)\n\nAction items for next project.",
+    "category": "consulting",
+    "tags": [
+      "consulting",
+      "project management",
+      "review"
+    ]
+  }
+]

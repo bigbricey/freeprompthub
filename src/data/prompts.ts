@@ -4,6 +4,16 @@ import midjourneyPrompts from "./categories/midjourney.json";
 import businessPrompts from "./categories/business.json";
 import writingPrompts from "./categories/writing.json";
 import codingPrompts from "./categories/coding.json";
+import realestatePrompts from "./categories/real-estate.json";
+import legalPrompts from "./categories/legal.json";
+import marketingPrompts from "./categories/marketing.json";
+import salesPrompts from "./categories/sales.json";
+import financePrompts from "./categories/finance.json";
+import hrPrompts from "./categories/hr.json";
+import saasPrompts from "./categories/saas.json";
+import consultingPrompts from "./categories/consulting.json";
+import healthcarePrompts from "./categories/healthcare.json";
+import contentcreationPrompts from "./categories/content-creation.json";
 
 export interface Prompt {
   id: string;
@@ -21,6 +31,16 @@ export const prompts: Record<string, Prompt[]> = {
   business: businessPrompts,
   writing: writingPrompts,
   coding: codingPrompts,
+  "real-estate": realestatePrompts,
+  legal: legalPrompts,
+  marketing: marketingPrompts,
+  sales: salesPrompts,
+  finance: financePrompts,
+  hr: hrPrompts,
+  saas: saasPrompts,
+  consulting: consultingPrompts,
+  healthcare: healthcarePrompts,
+  "content-creation": contentcreationPrompts,
 };
 
 export function getPromptsByCategory(category: string): Prompt[] {

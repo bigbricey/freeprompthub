@@ -1,0 +1,86 @@
+[
+  {
+    "id": "hlth-1",
+    "title": "Patient Intake Form Generator",
+    "description": "Create comprehensive medical history forms",
+    "prompt": "Design a patient intake form for a [SPECIALTY] clinic.\n\nSections:\n1. Demographics\n2. Chief Complaint (Why are you here?)\n3. History of Present Illness\n4. Past Medical History\n5. Medications & Allergies\n6. Family History\n7. Social History (Lifestyle)\n8. Review of Systems\n\nEnsure clear, patient-friendly language.",
+    "category": "healthcare",
+    "tags": [
+      "healthcare",
+      "admin",
+      "forms"
+    ]
+  },
+  {
+    "id": "hlth-2",
+    "title": "Symptom Checker Logic (Triage)",
+    "description": "Basic triage logic for chatbots (Non-medical advice)",
+    "prompt": "Create a triage logic flow for [SYMPTOM, e.g., Headache].\n\nDisclaimer: \"I am an AI, not a doctor. Call 911 for emergencies.\"\n\nRed Flags (Go to ER):\n- Sudden onset \"thunderclap\"\n- With fever/stiff neck\n- Post-trauma\n\nYellow Flags (See Doctor soon):\n- Worsening over days\n- Not responding to OTC meds\n\nGreen Flags (Self-care):\n- Tension type\n- Hydration/Rest advice",
+    "category": "healthcare",
+    "tags": [
+      "healthcare",
+      "triage",
+      "chatbot"
+    ]
+  },
+  {
+    "id": "hlth-3",
+    "title": "Appointment Reminder Templates",
+    "description": "Reduce no-shows with effective SMS/Email reminders",
+    "prompt": "Write a 3-part appointment reminder sequence.\n\nContext: [Doctor/Dentist/Therapy]\n\n1. Confirmation (Immediately upon booking): Date, time, location, cancellation policy.\n2. Reminder (48 hours before): \"Confirm your slot\" link.\n3. Day-of (2 hours before): Directions/Parking info.\n\nTone: Professional, clear, helpful.",
+    "category": "healthcare",
+    "tags": [
+      "healthcare",
+      "admin",
+      "communication"
+    ]
+  },
+  {
+    "id": "hlth-4",
+    "title": "Post-Op Care Instructions",
+    "description": "Clear discharge instructions for patients",
+    "prompt": "Write discharge instructions for [PROCEDURE].\n\nAudience: Patient (Grade 5 reading level).\n\nSections:\n1. What to expect (Normal pain/swelling)\n2. Wound care (Cleaning/Dressing)\n3. Medications (When/How to take)\n4. Activity restrictions (Lifting/Driving)\n5. Diet\n6. When to call the doctor (Warning signs)",
+    "category": "healthcare",
+    "tags": [
+      "healthcare",
+      "patient education",
+      "clinical"
+    ]
+  },
+  {
+    "id": "hlth-5",
+    "title": "Insurance Appeal Letter",
+    "description": "Fight claim denials with professional appeals",
+    "prompt": "Write a letter appealing a denied insurance claim.\n\nPatient: [NAME]\nProcedure: [PROCEDURE]\nReason for Denial: [Not medically necessary/Out of network]\n\nArgument:\n- Cite medical necessity (attach records)\n- Reference standard of care guidelines\n- Request peer-to-peer review\n\nTone: Formal, firm, evidence-based.",
+    "category": "healthcare",
+    "tags": [
+      "healthcare",
+      "insurance",
+      "admin"
+    ]
+  },
+  {
+    "id": "hlth-6",
+    "title": "Medical Scribe Template",
+    "description": "Standardize clinical notes (SOAP format)",
+    "prompt": "Create a SOAP note template for [CONDITION].\n\nS (Subjective): Patient quotes, history.\nO (Objective): Vitals, physical exam findings.\nA (Assessment): Diagnosis/Differential.\nP (Plan): Meds, labs, referrals, follow-up.\n\nInclude common phrases/abbreviations for this condition.",
+    "category": "healthcare",
+    "tags": [
+      "healthcare",
+      "clinical",
+      "documentation"
+    ]
+  },
+  {
+    "id": "hlth-7",
+    "title": "Wellness Newsletter Content",
+    "description": "Engage patients with health tips",
+    "prompt": "Write a monthly wellness newsletter for a clinic.\n\nTheme: [Month/Season, e.g., Flu Season/Heart Health Month]\n\nContent:\n1. Health Tip of the Month\n2. Myth vs Fact\n3. Clinic News (New staff/hours)\n4. Recipe or Exercise tip\n5. CTA (Book check-up)\n\nTone: Encouraging, educational.",
+    "category": "healthcare",
+    "tags": [
+      "healthcare",
+      "marketing",
+      "content"
+    ]
+  }
+]

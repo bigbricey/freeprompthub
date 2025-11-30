@@ -1,0 +1,86 @@
+[
+  {
+    "id": "mkt-1",
+    "title": "Facebook Ad Copy Generator",
+    "description": "Create high-converting ad copy for Facebook and Instagram",
+    "prompt": "Write 3 variations of Facebook Ad copy for [PRODUCT].\n\nTarget Audience: [AUDIENCE]\nPain Point: [PROBLEM]\nSolution: [PRODUCT BENEFIT]\nOffer: [DISCOUNT/TRIAL]\n\nFormat:\n1. Primary Text (Hook + Story + Benefit)\n2. Headline (Short & Punchy)\n3. Description (Social Proof/Urgency)\n4. CTA Button choice",
+    "category": "marketing",
+    "tags": [
+      "marketing",
+      "ads",
+      "copywriting"
+    ]
+  },
+  {
+    "id": "mkt-2",
+    "title": "SEO Content Strategy Builder",
+    "description": "Plan a month of SEO-optimized content",
+    "prompt": "Create a content strategy to rank for [KEYWORD].\n\nCompetitors: [LIST COMPETITORS]\nCurrent Domain Authority: [Low/Medium/High]\n\nPlan:\n1. Pillar Page Topic (The main hub)\n2. 5 Cluster Topics (Supporting articles)\n3. Keyword variations for each\n4. User Intent (Informational/Transactional)\n5. Internal linking structure",
+    "category": "marketing",
+    "tags": [
+      "marketing",
+      "SEO",
+      "content"
+    ]
+  },
+  {
+    "id": "mkt-3",
+    "title": "Influencer Brief Template",
+    "description": "Clear instructions for influencer collaborations",
+    "prompt": "Create a campaign brief for an influencer.\n\nBrand: [BRAND]\nCampaign Theme: [THEME]\nDeliverables: [1 Reel + 3 Stories]\nKey Messages: [POINTS TO HIT]\nDo's and Don'ts: [GUIDELINES]\n\nInclude:\n- Mood board description\n- Call to Action specific to their audience\n- Tracking link instructions",
+    "category": "marketing",
+    "tags": [
+      "marketing",
+      "influencers",
+      "PR"
+    ]
+  },
+  {
+    "id": "mkt-4",
+    "title": "Email Subject Line Tester",
+    "description": "Generate and analyze subject lines for open rates",
+    "prompt": "Generate 10 email subject lines for [EMAIL TOPIC].\n\nAudience: [AUDIENCE]\nGoal: [Open Rate/Click Through]\n\nStyles:\n1. Curiosity gap\n2. Urgency/Scarcity\n3. Personal/Direct\n4. Benefit-driven\n5. Weird/Pattern Interrupt\n\nRate each 1-10 for predicted open rate.",
+    "category": "marketing",
+    "tags": [
+      "marketing",
+      "email",
+      "copywriting"
+    ]
+  },
+  {
+    "id": "mkt-5",
+    "title": "Marketing Persona Builder",
+    "description": "Detailed buyer personas to target your marketing",
+    "prompt": "Create a detailed marketing persona for [PRODUCT].\n\nName: [NAME]\nDemographics: [AGE, LOCATION, JOB]\n\nPsychographics:\n1. Values & Beliefs\n2. Hobbies & Interests\n3. Media Consumption (Where do they hang out?)\n4. Buying Motivations\n5. Objections to buying\n6. Favorite brands (and why)",
+    "category": "marketing",
+    "tags": [
+      "marketing",
+      "strategy",
+      "branding"
+    ]
+  },
+  {
+    "id": "mkt-6",
+    "title": "Viral TikTok Script",
+    "description": "Scripts designed for high retention and engagement",
+    "prompt": "Write a script for a viral-style TikTok video.\n\nTopic: [TOPIC]\nNiche: [NICHE]\n\nStructure:\n1. Visual Hook (0-3s): Text on screen + Action\n2. Verbal Hook: Controversial statement or question\n3. Value/Story (15-30s): Fast-paced delivery\n4. The Twist/Reveal\n5. CTA (Save this for later/Follow for more)",
+    "category": "marketing",
+    "tags": [
+      "marketing",
+      "social media",
+      "video"
+    ]
+  },
+  {
+    "id": "mkt-7",
+    "title": "Go-To-Market Strategy",
+    "description": "Launch plan for new products",
+    "prompt": "Create a GTM strategy for [NEW PRODUCT].\n\nTarget Market: [MARKET]\nLaunch Date: [DATE]\n\nPhases:\n1. Pre-launch (Build hype/Waitlist)\n2. Launch Day (Channels & Activities)\n3. Post-launch (Retention & Upsell)\n\nChannels to focus on:\n- Organic Social\n- Paid Ads\n- Email\n- Partnerships",
+    "category": "marketing",
+    "tags": [
+      "marketing",
+      "strategy",
+      "business"
+    ]
+  }
+]

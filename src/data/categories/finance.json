@@ -1,0 +1,86 @@
+[
+  {
+    "id": "fin-1",
+    "title": "Excel Formula Generator",
+    "description": "Create complex Excel/Google Sheets formulas instantly",
+    "prompt": "Write an Excel formula to [DESCRIBE TASK].\n\nData context:\n- Column A: [DATA TYPE]\n- Column B: [DATA TYPE]\n\nRequirements:\n- Handle errors (IFERROR)\n- Use array formulas if efficient\n- Explain how the formula works step-by-step",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "excel",
+      "productivity"
+    ]
+  },
+  {
+    "id": "fin-2",
+    "title": "Financial Analysis Report Writer",
+    "description": "Turn raw numbers into a professional financial narrative",
+    "prompt": "Write a financial analysis commentary based on these variances.\n\nRevenue: [Actual vs Budget %]\nExpenses: [Actual vs Budget %]\nNet Income: [Actual vs Budget %]\n\nKey Drivers:\n[LIST REASONS FOR VARIANCE]\n\nStructure:\n1. Executive Summary\n2. Revenue Analysis (Volume vs Price mix)\n3. Expense Analysis (Fixed vs Variable)\n4. Profitability Impact\n5. Recommendations for next month",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "reporting",
+      "analysis"
+    ]
+  },
+  {
+    "id": "fin-3",
+    "title": "Budget Planner & Allocator",
+    "description": "Create detailed budgets for projects or departments",
+    "prompt": "Create a budget template for [PROJECT/DEPARTMENT].\n\nTotal Budget: [AMOUNT]\nTimeline: [DURATION]\nKey Cost Categories: [LIST CATEGORIES]\n\nProvide:\n1. Allocation % recommendation per category\n2. Line items to include under each category\n3. Contingency buffer recommendation\n4. Tracking method suggestion",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "budgeting",
+      "planning"
+    ]
+  },
+  {
+    "id": "fin-4",
+    "title": "Investment Thesis Generator",
+    "description": "Structure a compelling investment argument",
+    "prompt": "Draft an investment thesis for [COMPANY/ASSET].\n\nAsset Class: [Stock/Real Estate/Crypto]\nCurrent Price: [PRICE]\nTarget Price: [TARGET]\n\nSections:\n1. The Opportunity (Why now?)\n2. Key Catalysts (Events that will drive price)\n3. Competitive Moat\n4. Valuation Analysis (Why it's cheap)\n5. Risks & Mitigations\n6. Conclusion (Buy/Hold/Sell)",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "investing",
+      "analysis"
+    ]
+  },
+  {
+    "id": "fin-5",
+    "title": "Audit Checklist Creator",
+    "description": "Prepare for financial audits with comprehensive checklists",
+    "prompt": "Create an audit preparation checklist for [PROCESS, e.g., Accounts Payable].\n\nRisk Level: [High/Medium/Low]\n\nList:\n1. Documents to gather (Invoices, POs, Approvals)\n2. Reconciliations to perform\n3. Process controls to verify\n4. Common red flags to check for\n5. Interview questions for process owners",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "audit",
+      "accounting"
+    ]
+  },
+  {
+    "id": "fin-6",
+    "title": "SaaS Metrics Dashboard Spec",
+    "description": "Define key metrics for a SaaS finance dashboard",
+    "prompt": "Design a SaaS Finance Dashboard specification.\n\nStage: [Seed/Series A/Public]\nBusiness Model: [Subscription/Usage-based]\n\nDefine these metrics (Formula + Why it matters):\n1. MRR/ARR\n2. Churn (Logo vs Revenue)\n3. CAC (Customer Acquisition Cost)\n4. LTV (Lifetime Value)\n5. Burn Rate & Runway\n6. Net Dollar Retention (NDR)",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "SaaS",
+      "metrics"
+    ]
+  },
+  {
+    "id": "fin-7",
+    "title": "Cost Reduction Strategy",
+    "description": "Identify and plan cost-saving initiatives",
+    "prompt": "Develop a cost reduction plan for a [COMPANY TYPE].\n\nTarget Savings: [AMOUNT/%]\nFocus Areas: [OpEx/COGS/Headcount]\n\nStrategies:\n1. Vendor negotiation tactics\n2. Process automation opportunities\n3. Waste reduction\n4. Software license consolidation\n\nPrioritize by: Ease of implementation vs. Impact.",
+    "category": "finance",
+    "tags": [
+      "finance",
+      "strategy",
+      "business"
+    ]
+  }
+]

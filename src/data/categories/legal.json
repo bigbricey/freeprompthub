@@ -1,0 +1,86 @@
+[
+  {
+    "id": "legal-1",
+    "title": "Contract Clause Simplifier",
+    "description": "Translate legalese into plain English for clients",
+    "prompt": "Explain this legal clause in plain English for a client.\n\nClause:\n[PASTE CLAUSE]\n\nProvide:\n1. Simple summary (What it means)\n2. Implication (How it affects them)\n3. Risk level (Low/Medium/High)\n4. An analogy to explain the concept",
+    "category": "legal",
+    "tags": [
+      "legal",
+      "contracts",
+      "client communication"
+    ]
+  },
+  {
+    "id": "legal-2",
+    "title": "Legal Research Memo Drafter",
+    "description": "Draft comprehensive legal research memorandums",
+    "prompt": "Draft a legal research memo.\n\nIssue: [LEGAL QUESTION]\nJurisdiction: [STATE/COUNTRY]\nKey Facts: [LIST FACTS]\n\nStructure:\n1. Question Presented\n2. Brief Answer\n3. Statement of Facts\n4. Discussion (Analyze relevant case law and statutes - *Note: Verify all citations manually*)\n5. Conclusion",
+    "category": "legal",
+    "tags": [
+      "legal",
+      "research",
+      "writing"
+    ]
+  },
+  {
+    "id": "legal-3",
+    "title": "Client Intake Interview Script",
+    "description": "Standardize initial consultations to gather all necessary facts",
+    "prompt": "Create a client intake script for a [PRACTICE AREA, e.g., Personal Injury] case.\n\nGoal: Determine if we should take the case.\n\nSections:\n1. Incident Details (Date, time, location)\n2. Parties Involved\n3. Damages/Injuries\n4. Insurance/Coverage\n5. Previous Legal History\n6. Red Flag Questions (to screen out bad clients)",
+    "category": "legal",
+    "tags": [
+      "legal",
+      "intake",
+      "client relations"
+    ]
+  },
+  {
+    "id": "legal-4",
+    "title": "Compliance Checklist Generator",
+    "description": "Ensure businesses meet regulatory requirements",
+    "prompt": "Create a compliance checklist for a [INDUSTRY] company in [LOCATION].\n\nRegulation focus: [e.g., GDPR, HIPAA, OSHA]\n\nList:\n1. Mandatory Policy Documents\n2. Required Employee Training\n3. Data Handling Procedures\n4. Reporting Requirements\n5. Physical Site Requirements\n6. Audit Frequency",
+    "category": "legal",
+    "tags": [
+      "legal",
+      "compliance",
+      "business"
+    ]
+  },
+  {
+    "id": "legal-5",
+    "title": "Demand Letter Drafter",
+    "description": "Write strong demand letters to resolve disputes",
+    "prompt": "Write a formal demand letter.\n\nClient: [NAME]\nOpposing Party: [NAME]\nDispute: [Unpaid Invoice/Breach of Contract/Property Damage]\nAmount Demanded: [AMOUNT]\nDeadline: [DATE]\n\nTone: Firm, professional, authoritative.\n\nInclude:\n- Factual summary\n- Legal basis for claim\n- Demand for payment/action\n- Consequence of non-compliance (legal action)",
+    "category": "legal",
+    "tags": [
+      "legal",
+      "writing",
+      "disputes"
+    ]
+  },
+  {
+    "id": "legal-6",
+    "title": "Deposition Question Bank",
+    "description": "Prepare for depositions with strategic questions",
+    "prompt": "Generate a list of deposition questions for a [WITNESS TYPE] in a [CASE TYPE] case.\n\nGoal: Establish [FACT/ELEMENT].\n\nCategories:\n1. Background/Credibility\n2. The Incident/Event\n3. Damages/Impact\n4. Inconsistencies to probe\n5. \"Clean up\" questions",
+    "category": "legal",
+    "tags": [
+      "legal",
+      "litigation",
+      "trial prep"
+    ]
+  },
+  {
+    "id": "legal-7",
+    "title": "Privacy Policy Generator",
+    "description": "Draft a standard privacy policy for websites/apps",
+    "prompt": "Draft a Privacy Policy for a [WEBSITE/APP TYPE].\n\nData Collected: [Email, Location, Usage Data]\nThird-party tools: [Google Analytics, Stripe]\nUser Rights: [GDPR/CCPA compliance needed]\n\nSections:\n1. Introduction\n2. Information We Collect\n3. How We Use Your Information\n4. Sharing of Information\n5. Your Rights\n6. Contact Us",
+    "category": "legal",
+    "tags": [
+      "legal",
+      "privacy",
+      "contracts"
+    ]
+  }
+]

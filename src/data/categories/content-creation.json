@@ -1,0 +1,86 @@
+[
+  {
+    "id": "cc-1",
+    "title": "YouTube Video Script Generator",
+    "description": "Create engaging scripts with high retention",
+    "prompt": "Write a script for a YouTube video about [TOPIC].\n\nStyle: [Educational/Vlog/Review]\nLength: [10 mins]\n\nStructure:\n1. Hook (0:00-0:45): The Promise + The Stakes.\n2. Intro: Who am I + Why listen.\n3. Body Paragraph 1: [Point 1]\n4. Body Paragraph 2: [Point 2]\n5. Body Paragraph 3: [Point 3]\n6. Conclusion: Summary.\n7. CTA: Subscribe/Check link.",
+    "category": "content-creation",
+    "tags": [
+      "content",
+      "youtube",
+      "video"
+    ]
+  },
+  {
+    "id": "cc-2",
+    "title": "Blog Post Outline & SEO",
+    "description": "Outline blog posts that rank on Google",
+    "prompt": "Create a blog post outline for [KEYWORD].\n\nIntent: [Informational/Commercial]\n\n1. H1 Title (SEO optimized)\n2. Meta Description\n3. Introduction (PAS framework: Problem-Agitate-Solution)\n4. H2 Headers (Key subtopics)\n5. H3 Sub-headers\n6. FAQ Section (People also ask)\n7. Conclusion + CTA",
+    "category": "content-creation",
+    "tags": [
+      "content",
+      "blogging",
+      "SEO"
+    ]
+  },
+  {
+    "id": "cc-3",
+    "title": "Podcast Interview Question Generator",
+    "description": "Ask deep questions that make guests shine",
+    "prompt": "Generate interview questions for a podcast guest.\n\nGuest: [NAME]\nTopic: [TOPIC]\n\nFlow:\n1. Warm-up (Origin story)\n2. The \"Meat\" (Deep dive into expertise)\n3. The Struggle (Failures/Lessons)\n4. The Future (Trends/Predictions)\n5. Rapid Fire (Fun/Personal)\n\nAvoid generic questions like \"Tell us about yourself.\"",
+    "category": "content-creation",
+    "tags": [
+      "content",
+      "podcast",
+      "interview"
+    ]
+  },
+  {
+    "id": "cc-4",
+    "title": "Twitter/X Thread Generator",
+    "description": "Turn ideas into viral threads",
+    "prompt": "Turn this topic into a Twitter thread: [TOPIC].\n\nHook (Tweet 1): Punchy, controversial, or \"How to\".\nBody (Tweets 2-8): One idea per tweet. Use lists and formatting.\nSummary (Tweet 9): Recap key points.\nCTA (Tweet 10): \"Follow me for more\" + Link to newsletter.",
+    "category": "content-creation",
+    "tags": [
+      "content",
+      "twitter",
+      "social media"
+    ]
+  },
+  {
+    "id": "cc-5",
+    "title": "Content Repurposing Engine",
+    "description": "Turn one video into 10 pieces of content",
+    "prompt": "Repurpose this video transcript into:\n\n1. A LinkedIn post (Professional takeaway)\n2. A Twitter thread (Step-by-step)\n3. An Instagram Carousel (5 slides text)\n4. A Newsletter blurb (Teaser + Link)\n5. A Short/Reel script (60s highlight)\n\nTranscript:\n[PASTE TRANSCRIPT]",
+    "category": "content-creation",
+    "tags": [
+      "content",
+      "repurposing",
+      "marketing"
+    ]
+  },
+  {
+    "id": "cc-6",
+    "title": "Thumbnail Idea Generator",
+    "description": "Brainstorm click-worthy YouTube thumbnails",
+    "prompt": "Generate 3 thumbnail concepts for a video titled [TITLE].\n\nFor each:\n1. Visual Description (What's in the image?)\n2. Text Overlay (Max 3 words)\n3. Facial Expression (Emotion)\n4. Color Scheme (Contrast)\n\nGoal: High CTR, curiosity.",
+    "category": "content-creation",
+    "tags": [
+      "content",
+      "youtube",
+      "design"
+    ]
+  },
+  {
+    "id": "cc-7",
+    "title": "Hook Library Builder",
+    "description": "Generate 10 hooks for any piece of content",
+    "prompt": "Write 10 hooks for a piece of content about [TOPIC].\n\nTypes:\n- Negative (Stop doing X)\n- Numerical (5 ways to...)\n- Secret (The X no one tells you)\n- Story (How I...)\n- Question (Are you...?)\n\nMake them punchy and under 15 words.",
+    "category": "content-creation",
+    "tags": [
+      "content",
+      "copywriting",
+      "hooks"
+    ]
+  }
+]

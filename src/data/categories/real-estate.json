@@ -1,0 +1,98 @@
+[
+  {
+    "id": "re-1",
+    "title": "Real Estate Listing Description Generator",
+    "description": "Create captivating property descriptions that sell homes faster",
+    "prompt": "Write a luxury real estate listing description.\n\nProperty Details:\n- Type: [House/Condo/Estate]\n- Bedrooms/Bathrooms: [NUMBER]\n- Key Features: [LIST FEATURES, e.g., pool, chef's kitchen, view]\n- Location: [NEIGHBORHOOD/CITY]\n- Vibe: [Modern/Cozy/Historic]\n\nStructure:\n1. Catchy Headline\n2. Opening Hook (Lifestyle focus)\n3. Feature Highlights (Sensory details)\n4. Location Benefits\n5. Call to Action (Schedule viewing)",
+    "category": "real-estate",
+    "tags": [
+      "real estate",
+      "copywriting",
+      "sales"
+    ]
+  },
+  {
+    "id": "re-2",
+    "title": "Cold Call Script for Expired Listings",
+    "description": "Empathetic scripts to win back frustrated sellers",
+    "prompt": "Write a cold call script for an expired listing.\n\nAgent Name: [NAME]\nHomeowner Situation: [Listed for 6 months, didn't sell]\nGoal: [Get an appointment]\n\nApproach:\n- Be empathetic, not pushy\n- Ask a pattern-interrupt question\n- Offer a specific value add (e.g., \"I have a new marketing plan\")\n- Handle objection: \"I'm taking it off the market\"",
+    "category": "real-estate",
+    "tags": [
+      "real estate",
+      "sales",
+      "cold calling"
+    ]
+  },
+  {
+    "id": "re-3",
+    "title": "Virtual Tour Script Writer",
+    "description": "Engaging narration for video walkthroughs",
+    "prompt": "Write a script for a 60-second video tour of this property.\n\nRoom flow: [Entry -> Living Room -> Kitchen -> Backyard -> Master Suite]\nKey Selling Point: [The View/The Kitchen]\n\nTone: [Energetic/Relaxed/Luxury]\n\nInclude:\n- Intro hook\n- Transition phrases between rooms\n- Call out specific details (e.g., \"Notice the crown molding\")\n- Closing CTA",
+    "category": "real-estate",
+    "tags": [
+      "real estate",
+      "video",
+      "marketing"
+    ]
+  },
+  {
+    "id": "re-4",
+    "title": "Lead Qualification Chatbot Persona",
+    "description": "Train AI to qualify buyer leads 24/7",
+    "prompt": "Act as a friendly Real Estate Assistant named [NAME].\n\nYour goal: Qualify buyer leads.\n\nAsk these questions naturally in conversation:\n1. What is your timeline to move?\n2. Have you been pre-approved for a mortgage?\n3. What is your price range?\n4. Are you working with another agent?\n\nIf they are unrepresented and pre-approved, try to book a call with [AGENT NAME].",
+    "category": "real-estate",
+    "tags": [
+      "real estate",
+      "chatbot",
+      "lead gen"
+    ]
+  },
+  {
+    "id": "re-5",
+    "title": "Neighborhood Guide Generator",
+    "description": "Establish local authority with detailed area guides",
+    "prompt": "Write a comprehensive guide to [NEIGHBORHOOD].\n\nTarget Audience: [Families/Young Professionals]\n\nCover:\n1. Overview/Vibe\n2. Real Estate Market Stats (General trends)\n3. Top Schools\n4. Best Coffee Shops & Restaurants\n5. Parks & Recreation\n6. Commute/Transportation\n7. Why people love living here",
+    "category": "real-estate",
+    "tags": [
+      "real estate",
+      "content",
+      "SEO"
+    ]
+  },
+  {
+    "id": "re-6",
+    "title": "Open House Follow-up Email Sequence",
+    "description": "Convert open house visitors into clients",
+    "prompt": "Write a 3-email sequence for open house visitors.\n\nContext: They visited [ADDRESS] on Sunday.\n\nEmail 1 (Sunday evening): Thank you, digital brochure link, ask for feedback.\nEmail 2 (Tuesday): Similar properties in the area, offer a private tour.\nEmail 3 (Friday): Market update for the neighborhood, offer a coffee chat.\n\nTone: Helpful, low pressure.",
+    "category": "real-estate",
+    "tags": [
+      "real estate",
+      "email",
+      "marketing"
+    ]
+  },
+  {
+    "id": "re-7",
+    "title": "Real Estate Investor Pitch Deck",
+    "description": "Present deals to investors professionally",
+    "prompt": "Create an outline for a Real Estate Investment pitch deck.\n\nProperty: [ADDRESS/TYPE]\nStrategy: [Fix & Flip/Buy & Hold]\n\nSlides:\n1. Executive Summary\n2. The Property (Current condition)\n3. The Market (Comps & Trends)\n4. The Plan (Renovation scope & budget)\n5. Financials (ROI, Cap Rate, Cash on Cash)\n6. Exit Strategy\n7. The Team",
+    "category": "real-estate",
+    "tags": [
+      "real estate",
+      "investing",
+      "business"
+    ]
+  },
+  {
+    "id": "re-8",
+    "title": "Social Media Content Calendar for Agents",
+    "description": "30 days of post ideas to grow your brand",
+    "prompt": "Create a 4-week social media calendar for a Realtor.\n\nFocus: [Luxury Homes/First Time Buyers]\n\nMix:\n- Listings (20%)\n- Educational (40%)\n- Personal/Behind the Scenes (20%)\n- Local Community (20%)\n\nProvide post topic, format (Reel/Carousel/Image), and caption hook for each day.",
+    "category": "real-estate",
+    "tags": [
+      "real estate",
+      "social media",
+      "marketing"
+    ]
+  }
+]

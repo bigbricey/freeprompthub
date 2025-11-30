@@ -1,0 +1,86 @@
+[
+  {
+    "id": "sales-1",
+    "title": "Cold Email Outreach Generator",
+    "description": "Write cold emails that get replies, not deleted",
+    "prompt": "Write a cold email to a [JOB TITLE] at a [COMPANY TYPE].\n\nMy Product: [PRODUCT]\nValue Proposition: [MAIN BENEFIT]\nPain Point: [PROBLEM THEY HAVE]\n\nStructure:\n1. Subject Line (Short, curiosity-inducing)\n2. The Hook (Personalized observation)\n3. The Bridge (Connecting their problem to your solution)\n4. The Ask (Low friction, e.g., \"Worth a chat?\")\n\nKeep it under 150 words.",
+    "category": "sales",
+    "tags": [
+      "sales",
+      "email",
+      "cold outreach"
+    ]
+  },
+  {
+    "id": "sales-2",
+    "title": "Objection Handling Script",
+    "description": "Overcome common sales objections with confidence",
+    "prompt": "Help me handle this sales objection: \"[OBJECTION, e.g., It's too expensive]\"\n\nProduct: [PRODUCT]\nPrice: [PRICE]\nCompetitor: [COMPETITOR]\n\nProvide 3 responses:\n1. The Empathy & Pivot (Acknowledge and reframe value)\n2. The ROI Calculation (Show cost of inaction)\n3. The Case Study (Reference a similar successful client)",
+    "category": "sales",
+    "tags": [
+      "sales",
+      "negotiation",
+      "scripts"
+    ]
+  },
+  {
+    "id": "sales-3",
+    "title": "Discovery Call Question Bank",
+    "description": "Uncover pain points and budget during discovery",
+    "prompt": "Generate 10 discovery call questions for selling [PRODUCT].\n\nGoal: Qualify the lead and find pain points.\n\nCategories:\n1. Situation (Current state)\n2. Problem (What's broken)\n3. Implication (Cost of the problem)\n4. Need-Payoff (Value of solution)\n5. Budget & Authority (Who decides and how much)\n\nInclude \"Softball\" questions to build rapport.",
+    "category": "sales",
+    "tags": [
+      "sales",
+      "discovery",
+      "qualification"
+    ]
+  },
+  {
+    "id": "sales-4",
+    "title": "Sales Script for Gatekeepers",
+    "description": "Get past the receptionist to the decision maker",
+    "prompt": "Write a script to get past a gatekeeper (receptionist/EA).\n\nTarget: [DECISION MAKER NAME]\nMy Goal: [Connect to discuss X]\n\nTechniques:\n- Sounding like a peer, not a salesperson\n- Using the \"Assumptive Close\"\n- Referencing a prior interaction (if applicable)\n\nScript should be polite but firm.",
+    "category": "sales",
+    "tags": [
+      "sales",
+      "cold calling",
+      "scripts"
+    ]
+  },
+  {
+    "id": "sales-5",
+    "title": "Closing Techniques Script",
+    "description": "Proven scripts to ask for the sale",
+    "prompt": "Give me 5 closing scripts for [PRODUCT].\n\nScenario: Demo went well, client seems interested.\n\nStyles:\n1. The Assumptive Close (\"When should we start?\")\n2. The Option Close (\"Do you prefer Plan A or B?\")\n3. The Urgency Close (\"Pricing changes next month\")\n4. The Summary Close (Recap benefits then ask)\n5. The Trial Close (Testing the water)",
+    "category": "sales",
+    "tags": [
+      "sales",
+      "closing",
+      "negotiation"
+    ]
+  },
+  {
+    "id": "sales-6",
+    "title": "LinkedIn Social Selling Message",
+    "description": "Connect with prospects on LinkedIn without being spammy",
+    "prompt": "Write a LinkedIn connection request and follow-up message.\n\nTarget: [ROLE]\nContext: [We have mutual connections / I read their post]\n\nMessage 1 (Connection): No pitch, just relevance.\nMessage 2 (After acceptance): Value-add (share a resource), still no hard pitch.\nMessage 3 (3 days later): The \"Ask\" (soft transition to conversation).",
+    "category": "sales",
+    "tags": [
+      "sales",
+      "linkedin",
+      "social selling"
+    ]
+  },
+  {
+    "id": "sales-7",
+    "title": "Sales Follow-up Sequence",
+    "description": "Persistent follow-ups for ghosting prospects",
+    "prompt": "Write a 4-email follow-up sequence for a prospect who ghosted after the demo.\n\nEmail 1 (2 days later): Quick recap + resource.\nEmail 2 (4 days later): \"Did I miss something?\" (Check for objections).\nEmail 3 (7 days later): Case study/Social proof.\nEmail 4 (14 days later): The \"Break-up\" email (Strip the line).",
+    "category": "sales",
+    "tags": [
+      "sales",
+      "email",
+      "follow-up"
+    ]
+  }
+]
