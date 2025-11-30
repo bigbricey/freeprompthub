@@ -1,0 +1,122 @@
+[
+    {
+        "id": "code-1",
+        "title": "Code Documentation Generator",
+        "description": "Generate comprehensive documentation for your code",
+        "prompt": "Generate documentation for this code.\n\nLanguage: [LANGUAGE]\nDocumentation style: [JSDoc/Docstring/TSDoc/etc]\n\nCreate:\n1. File/module overview\n2. Function/method documentation with:\n   - Description\n   - Parameters with types\n   - Return values\n   - Exceptions thrown\n   - Usage examples\n3. Class documentation (if applicable)\n4. README section for this component\n\nCode:\n```\n[PASTE YOUR CODE]\n```",
+        "category": "coding",
+        "tags": [
+            "documentation",
+            "comments",
+            "best practices"
+        ]
+    },
+    {
+        "id": "code-2",
+        "title": "Unit Test Generator",
+        "description": "Generate comprehensive unit tests for your code",
+        "prompt": "Write unit tests for this code.\n\nLanguage: [LANGUAGE]\nTesting framework: [Jest/Pytest/JUnit/etc]\nCode to test:\n```\n[PASTE YOUR CODE]\n```\n\nGenerate tests for:\n1. Happy path scenarios\n2. Edge cases\n3. Error handling\n4. Boundary conditions\n5. Null/undefined inputs\n\nInclude:\n- Descriptive test names\n- Arrange/Act/Assert structure\n- Mocking where needed\n- Test coverage summary",
+        "category": "coding",
+        "tags": [
+            "testing",
+            "unit tests",
+            "TDD"
+        ]
+    },
+    {
+        "id": "code-3",
+        "title": "Code Refactoring Assistant",
+        "description": "Get suggestions to improve code quality and maintainability",
+        "prompt": "Refactor this code for better quality.\n\nLanguage: [LANGUAGE]\nGoals: [performance/readability/maintainability/all]\n\nCode:\n```\n[PASTE YOUR CODE]\n```\n\nProvide:\n1. Identified code smells\n2. Refactored version\n3. Explanation of each change\n4. Design patterns that could apply\n5. Performance implications\n6. Before/after comparison",
+        "category": "coding",
+        "tags": [
+            "refactoring",
+            "clean code",
+            "best practices"
+        ]
+    },
+    {
+        "id": "code-4",
+        "title": "API Endpoint Designer",
+        "description": "Design RESTful API endpoints with documentation",
+        "prompt": "Design a REST API for [FEATURE/RESOURCE].\n\nRequirements: [WHAT IT NEEDS TO DO]\nAuthentication: [TYPE]\nFramework: [EXPRESS/DJANGO/RAILS/etc]\n\nProvide:\n1. Endpoint definitions (method, path, description)\n2. Request body schemas\n3. Response schemas (success and error)\n4. Status codes used\n5. Authentication/authorization logic\n6. Rate limiting recommendations\n7. Example requests and responses\n8. OpenAPI/Swagger snippet",
+        "category": "coding",
+        "tags": [
+            "API",
+            "REST",
+            "backend"
+        ]
+    },
+    {
+        "id": "code-5",
+        "title": "Database Schema Designer",
+        "description": "Design efficient database schemas with relationships",
+        "prompt": "Design a database schema for [APPLICATION/FEATURE].\n\nDatabase type: [PostgreSQL/MySQL/MongoDB/etc]\nRequirements:\n[LIST YOUR DATA REQUIREMENTS]\n\nProvide:\n1. Table/collection definitions\n2. Column types and constraints\n3. Primary and foreign keys\n4. Indexes for common queries\n5. Relationships (1:1, 1:N, N:N)\n6. Entity relationship diagram (text-based)\n7. Sample queries for common operations\n8. Migration script",
+        "category": "coding",
+        "tags": [
+            "database",
+            "SQL",
+            "schema"
+        ]
+    },
+    {
+        "id": "code-6",
+        "title": "Regex Pattern Builder",
+        "description": "Create and explain regex patterns for any use case",
+        "prompt": "Create a regex pattern for me.\n\nWhat I need to match: [DESCRIBE PATTERN]\nExamples that should match:\n[LIST EXAMPLES]\nExamples that should NOT match:\n[LIST NON-EXAMPLES]\nLanguage: [JS/Python/etc]\n\nProvide:\n1. The regex pattern\n2. Step-by-step explanation\n3. Test cases\n4. Common edge cases handled\n5. Performance considerations\n6. Alternative simpler patterns (if any)",
+        "category": "coding",
+        "tags": [
+            "regex",
+            "patterns",
+            "validation"
+        ]
+    },
+    {
+        "id": "code-7",
+        "title": "Code Converter (Language Translation)",
+        "description": "Convert code from one programming language to another",
+        "prompt": "Convert this code from [SOURCE LANGUAGE] to [TARGET LANGUAGE].\n\nSource code:\n```\n[PASTE YOUR CODE]\n```\n\nRequirements:\n1. Use idiomatic [TARGET LANGUAGE] patterns\n2. Maintain functionality exactly\n3. Use equivalent libraries/frameworks\n4. Handle language-specific differences\n5. Add comments where syntax differs significantly\n6. Note any features that don't translate directly",
+        "category": "coding",
+        "tags": [
+            "conversion",
+            "translation",
+            "languages"
+        ]
+    },
+    {
+        "id": "code-8",
+        "title": "Security Vulnerability Scanner",
+        "description": "Identify security issues in your code",
+        "prompt": "Perform a security review of this code.\n\nLanguage: [LANGUAGE]\nApplication type: [web/api/mobile/etc]\n\nCode:\n```\n[PASTE YOUR CODE]\n```\n\nCheck for:\n1. OWASP Top 10 vulnerabilities\n2. Injection risks (SQL, XSS, Command)\n3. Authentication/Authorization issues\n4. Data exposure risks\n5. Insecure configurations\n6. Dependency vulnerabilities (if visible)\n\nFor each issue provide:\n- Severity (Critical/High/Medium/Low)\n- Description\n- Location in code\n- Fix recommendation\n- Secure code example",
+        "category": "coding",
+        "tags": [
+            "security",
+            "vulnerabilities",
+            "OWASP"
+        ]
+    },
+    {
+        "id": "code-9",
+        "title": "Git Commit Message Generator",
+        "description": "Write clear, conventional commit messages",
+        "prompt": "Write a commit message for these changes.\n\nConvention: [Conventional Commits/Custom/None]\nChanges made:\n[DESCRIBE YOUR CHANGES]\n\nDiff (if available):\n```\n[PASTE DIFF]\n```\n\nProvide:\n1. Commit message following convention\n2. Type (feat/fix/docs/style/refactor/test/chore)\n3. Scope (optional)\n4. Body (for complex changes)\n5. Footer (breaking changes, issue references)\n6. Alternative phrasings",
+        "category": "coding",
+        "tags": [
+            "git",
+            "commits",
+            "version control"
+        ]
+    },
+    {
+        "id": "code-10",
+        "title": "Algorithm Explainer & Optimizer",
+        "description": "Understand algorithms and optimize for performance",
+        "prompt": "Explain and optimize this algorithm.\n\nCode:\n```\n[PASTE YOUR CODE]\n```\n\nProvide:\n1. What this algorithm does (plain English)\n2. Step-by-step walkthrough\n3. Time complexity (Big O)\n4. Space complexity\n5. Optimization opportunities\n6. Optimized version of the code\n7. Trade-offs of the optimization\n8. Test cases to verify correctness\n9. When NOT to use this approach",
+        "category": "coding",
+        "tags": [
+            "algorithms",
+            "optimization",
+            "performance"
+        ]
+    }
+]

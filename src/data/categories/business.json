@@ -1,0 +1,242 @@
+[
+    {
+        "id": "biz-1",
+        "title": "Profitable Business Idea Generator",
+        "description": "Generate validated business ideas based on your skills and market trends",
+        "prompt": "Generate 5 profitable business ideas for me.\n\nMy skills: [YOUR SKILLS]\nAvailable capital: [BUDGET]\nTime available: [FULL-TIME/SIDE HUSTLE]\nInterests: [WHAT YOU ENJOY]\n\nFor each idea provide:\n1. Business concept (2-3 sentences)\n2. Target customer and their pain point\n3. Revenue model (how you make money)\n4. Startup costs estimate\n5. Time to first revenue\n6. Scalability potential (1-10)\n7. Competition level\n8. First 3 action steps to validate",
+        "category": "business",
+        "tags": [
+            "startup",
+            "ideas",
+            "entrepreneurship"
+        ]
+    },
+    {
+        "id": "biz-2",
+        "title": "Freelance Rate Calculator & Pitch",
+        "description": "Calculate your worth and create a compelling service pitch",
+        "prompt": "Help me price my freelance services and create a pitch.\n\nService: [WHAT YOU DO]\nExperience: [YEARS]\nLocation: [CITY/COUNTRY]\nTarget clients: [WHO YOU WANT TO WORK WITH]\n\nProvide:\n1. Market rate research (low/mid/high ranges)\n2. Recommended hourly rate with justification\n3. Project-based pricing strategy\n4. Value-based pricing opportunities\n5. A compelling 100-word service description\n6. 3 packages (basic/standard/premium) with pricing\n7. Objection handlers for \"too expensive\"",
+        "category": "business",
+        "tags": [
+            "freelance",
+            "pricing",
+            "consulting"
+        ]
+    },
+    {
+        "id": "biz-3",
+        "title": "Sales Page Copy Generator",
+        "description": "Create high-converting sales page copy using proven frameworks",
+        "prompt": "Write sales page copy for my product/service.\n\nProduct: [NAME AND DESCRIPTION]\nPrice: [PRICE]\nTarget audience: [WHO IT'S FOR]\nMain problem it solves: [PAIN POINT]\nKey benefits: [TOP 3 BENEFITS]\nProof/results: [TESTIMONIALS, STATS]\n\nCreate:\n1. Headline (grab attention)\n2. Subheadline (clarify the offer)\n3. Problem agitation section\n4. Solution introduction\n5. Benefits with bullet points\n6. Social proof section\n7. FAQ (5 common objections)\n8. CTA with urgency\n9. Guarantee statement",
+        "category": "business",
+        "tags": [
+            "copywriting",
+            "sales",
+            "marketing"
+        ]
+    },
+    {
+        "id": "biz-4",
+        "title": "Email Marketing Sequence for Launch",
+        "description": "Complete launch email sequence to maximize sales",
+        "prompt": "Create a product launch email sequence.\n\nProduct: [PRODUCT]\nLaunch date: [DATE]\nPrice: [PRICE]\nDiscount/bonus: [IF ANY]\nList size: [APPROXIMATE]\n\nWrite these emails:\n1. Teaser email (7 days before)\n2. Story email (5 days before)\n3. Value email (3 days before)\n4. Launch email (Day 1)\n5. FAQ/Objection email (Day 2)\n6. Social proof email (Day 3)\n7. Last chance email (Final day)\n\nInclude subject lines and send times.",
+        "category": "business",
+        "tags": [
+            "email",
+            "launch",
+            "marketing"
+        ]
+    },
+    {
+        "id": "biz-5",
+        "title": "LinkedIn Content Strategy",
+        "description": "30-day LinkedIn content plan to build authority and generate leads",
+        "prompt": "Create a 30-day LinkedIn content strategy for me.\n\nMy business: [WHAT YOU DO]\nTarget audience: [WHO YOU HELP]\nGoal: [LEADS/AUTHORITY/BOTH]\nPosting frequency: [X times per week]\n\nProvide:\n1. Content pillars (4-5 themes to rotate)\n2. 30 post ideas with hooks (first line)\n3. Best posting times\n4. Hashtag strategy\n5. Engagement strategy (comments, DMs)\n6. One viral-style post template\n7. CTA strategy (not every post)\n8. Metrics to track",
+        "category": "business",
+        "tags": [
+            "linkedin",
+            "social media",
+            "leads"
+        ]
+    },
+    {
+        "id": "biz-6",
+        "title": "Passive Income Product Creator",
+        "description": "Design a digital product you can sell while you sleep",
+        "prompt": "Help me create a digital product for passive income.\n\nMy expertise: [YOUR KNOWLEDGE AREA]\nAudience: [WHO WOULD BUY]\nTime to create: [HOURS AVAILABLE]\nPrice goal: [TARGET PRICE]\n\nDesign:\n1. 3 product ideas with pros/cons\n2. Recommended product with justification\n3. Detailed outline/table of contents\n4. What to include as bonuses\n5. Pricing strategy\n6. Platform recommendations\n7. Marketing angle\n8. First week launch checklist",
+        "category": "business",
+        "tags": [
+            "passive income",
+            "digital products",
+            "entrepreneurship"
+        ]
+    },
+    {
+        "id": "biz-7",
+        "title": "Proposal & Quote Generator",
+        "description": "Create professional proposals that win clients",
+        "prompt": "Write a professional proposal for a potential client.\n\nClient: [CLIENT/COMPANY NAME]\nProject: [WHAT THEY NEED]\nTheir goals: [WHAT SUCCESS LOOKS LIKE]\nBudget range: [IF KNOWN]\nTimeline: [DEADLINE]\n\nInclude:\n1. Executive summary\n2. Understanding of their needs\n3. Proposed solution (detailed)\n4. Scope and deliverables\n5. Timeline with milestones\n6. Investment (pricing with options)\n7. Why choose me/us\n8. Next steps\n9. Terms and conditions",
+        "category": "business",
+        "tags": [
+            "proposals",
+            "clients",
+            "sales"
+        ]
+    },
+    {
+        "id": "biz-8",
+        "title": "Niche Website Business Plan",
+        "description": "Plan a niche content site for affiliate/ad revenue",
+        "prompt": "Create a niche website business plan.\n\nNiche: [TOPIC AREA]\nMonetization: [Affiliate/Ads/Products]\nCompetition tolerance: [low/medium/high]\nTime available: [hours per week]\n\nProvide:\n1. Niche validation (search volume, competition)\n2. 20 article topic ideas with search intent\n3. Site structure recommendation\n4. Monetization strategy breakdown\n5. Content calendar (first 3 months)\n6. SEO strategy\n7. Link building approach\n8. Revenue projections (6/12/24 months)\n9. Tools needed and costs",
+        "category": "business",
+        "tags": [
+            "niche sites",
+            "affiliate",
+            "SEO"
+        ]
+    },
+    {
+        "id": "biz-9",
+        "title": "Pitch Deck Outline",
+        "description": "Create a compelling investor pitch deck structure",
+        "prompt": "Create a pitch deck outline for my startup.\n\nCompany: [NAME]\nProblem we solve: [PAIN POINT]\nSolution: [YOUR PRODUCT]\nTraction: [USERS/REVENUE/GROWTH]\nAsk: [HOW MUCH, WHAT FOR]\n\nCreate 12 slides:\n1. Title slide (hook)\n2. Problem (make them feel it)\n3. Solution (your answer)\n4. How it works\n5. Market size (TAM/SAM/SOM)\n6. Business model\n7. Traction/milestones\n8. Competition (why you win)\n9. Team\n10. Financials\n11. Use of funds\n12. The ask and vision\n\nInclude speaking notes for each.",
+        "category": "business",
+        "tags": [
+            "fundraising",
+            "startup",
+            "investors"
+        ]
+    },
+    {
+        "id": "biz-10",
+        "title": "Newsletter Monetization Strategy",
+        "description": "Turn your email list into a revenue stream",
+        "prompt": "Create a newsletter monetization strategy.\n\nNewsletter topic: [SUBJECT]\nCurrent subscribers: [NUMBER]\nPosting frequency: [HOW OFTEN]\nCurrent revenue: [AMOUNT OR $0]\n\nDevelop:\n1. 5 monetization streams ranked by potential\n2. Sponsorship rate card (what to charge)\n3. Sponsor pitch template\n4. Premium tier offering design\n5. Digital product ideas to sell\n6. Affiliate opportunities in this niche\n7. Growth strategies to increase value\n8. Revenue projections by subscriber count\n9. Tech stack recommendations",
+        "category": "business",
+        "tags": [
+            "newsletter",
+            "monetization",
+            "email"
+        ]
+    },
+    {
+        "id": "biz-11",
+        "title": "Cold DM Outreach Script",
+        "description": "Non-spammy direct messages that get replies",
+        "prompt": "Write a cold DM for [PLATFORM] to connect with [TARGET ROLE].\n\nMy goal: [PARTNERSHIP/SALES/NETWORKING]\nMy offer/value: [WHAT I BRING]\n\nCreate 3 variations:\n1. The \"Flattery\" approach (complimenting their work)\n2. The \"Value First\" approach (offering something free)\n3. The \"Question\" approach (asking for advice/input)\n\nKeep them under 280 characters if possible. No generic \"hope you're well\".",
+        "category": "business",
+        "tags": [
+            "sales",
+            "social media",
+            "networking"
+        ]
+    },
+    {
+        "id": "biz-12",
+        "title": "SEO Keyword Strategy Generator",
+        "description": "Find low-competition, high-volume keywords for your niche",
+        "prompt": "Act as an SEO expert. I want to rank for [TOPIC].\n\nTarget audience: [AUDIENCE]\n\nProvide:\n1. 10 \"Money\" keywords (high intent, lower volume)\n2. 10 \"Traffic\" keywords (informational, high volume)\n3. 5 Long-tail question keywords (Who/What/Where)\n4. For each, estimate search intent (Commercial/Informational)\n5. Content ideas for the top 3 keywords",
+        "category": "business",
+        "tags": [
+            "SEO",
+            "marketing",
+            "traffic"
+        ]
+    },
+    {
+        "id": "biz-13",
+        "title": "SaaS Churn Reducer",
+        "description": "Strategies to keep customers from cancelling",
+        "prompt": "My SaaS product [NAME] helps [AUDIENCE] do [FUNCTION].\nWe are seeing high churn at [TIME PERIOD, e.g., month 3].\n\nAnalyze potential reasons and suggest solutions:\n1. Onboarding gaps\n2. Value realization blockers\n3. Pricing/Perceived value mismatch\n\nCreate a 3-step \"Save the Customer\" email sequence for users who click \"Cancel\".",
+        "category": "business",
+        "tags": [
+            "SaaS",
+            "retention",
+            "growth"
+        ]
+    },
+    {
+        "id": "biz-14",
+        "title": "Influencer Outreach Template",
+        "description": "Pitch influencers to promote your brand",
+        "prompt": "Write a pitch email to an influencer.\n\nMy Brand: [BRAND]\nInfluencer's Niche: [NICHE]\nCampaign Goal: [AWARENESS/SALES]\nCompensation: [FREE PRODUCT/PAYMENT/AFFILIATE]\n\nStructure:\n1. Personal connection (reference their recent content)\n2. Why they are a perfect fit\n3. The offer (clear and attractive)\n4. Creative freedom assurance\n5. Low-friction call to action",
+        "category": "business",
+        "tags": [
+            "marketing",
+            "influencers",
+            "PR"
+        ]
+    },
+    {
+        "id": "biz-15",
+        "title": "Job Interview Question Generator",
+        "description": "Hire the best talent with behavioral interview questions",
+        "prompt": "I am hiring a [ROLE] for my [INDUSTRY] company.\n\nCulture: [DESCRIBE CULTURE, e.g., fast-paced, remote]\nKey skills needed: [SKILL 1, SKILL 2]\n\nGenerate 10 interview questions:\n- 3 Behavioral (Tell me about a time...)\n- 3 Situational (What would you do if...)\n- 2 Cultural fit\n- 2 Technical/Skill-based\n\nInclude \"Green Flags\" (good answers) and \"Red Flags\" (warning signs) for each.",
+        "category": "business",
+        "tags": [
+            "hiring",
+            "management",
+            "HR"
+        ]
+    },
+    {
+        "id": "biz-16",
+        "title": "Landing Page Audit",
+        "description": "Critique your landing page for conversion killers",
+        "prompt": "Act as a conversion rate optimization (CRO) expert.\n\nReview my landing page copy/structure:\n[PASTE COPY OR DESCRIBE STRUCTURE]\n\nIdentify:\n1. Clarity issues (Is the value prop clear in 5 seconds?)\n2. Trust gaps (Missing social proof?)\n3. Friction points (Too many fields?)\n4. CTA weakness\n5. Mobile responsiveness considerations (if described)\n\nRate the page 1-10 and give 3 \"Quick Wins\" to increase conversions today.",
+        "category": "business",
+        "tags": [
+            "CRO",
+            "marketing",
+            "sales"
+        ]
+    },
+    {
+        "id": "biz-17",
+        "title": "Brand Voice Guide Creator",
+        "description": "Define a consistent voice for your brand",
+        "prompt": "Create a Brand Voice Guide for [COMPANY NAME].\n\nWe want to sound: [ADJECTIVES, e.g., witty, authoritative, rebellious]\nWe do NOT want to sound: [ADJECTIVES, e.g., arrogant, silly]\n\nDefine:\n1. Voice Persona (If the brand was a person)\n2. Tone variations (Social media vs. Legal docs)\n3. Vocabulary (Words we use vs. Words we avoid)\n4. Grammar/Style rules (Emoji use, capitalization)\n5. Before/After examples of rewriting generic copy into our voice",
+        "category": "business",
+        "tags": [
+            "branding",
+            "marketing",
+            "content"
+        ]
+    },
+    {
+        "id": "biz-18",
+        "title": "Webinar Script Structure",
+        "description": "High-converting webinar outline for selling courses or services",
+        "prompt": "Outline a 60-minute sales webinar for [PRODUCT].\n\nTarget Audience: [AUDIENCE]\nPrice: [PRICE]\n\nStructure:\n1. The Hook (First 5 mins)\n2. The Story/Epiphany (Why the old way fails)\n3. The Vehicle (Your new method)\n4. Content Core (3 Secrets/Teaching points)\n5. The Transition (Pivot to sales)\n6. The Stack (Value build-up)\n7. Scarcity/Urgency\n8. Q&A Strategy",
+        "category": "business",
+        "tags": [
+            "sales",
+            "webinar",
+            "marketing"
+        ]
+    },
+    {
+        "id": "biz-19",
+        "title": "Customer Avatar Creator",
+        "description": "Deep dive into your ideal customer's psyche",
+        "prompt": "Create a detailed Customer Avatar for [PRODUCT].\n\nDemographics: [AGE, GENDER, LOCATION]\n\nFlesh out:\n1. Name and Backstory\n2. Core Values & Beliefs\n3. Sources of Information (Books, Gurus, Blogs)\n4. Dreams & Goals\n5. Fears & Frustrations (What keeps them up at night?)\n6. Objections to buying\n7. Role in purchase process (Decision maker?)\n\nWrite a \"Day in the Life\" diary entry from their perspective.",
+        "category": "business",
+        "tags": [
+            "marketing",
+            "strategy",
+            "branding"
+        ]
+    },
+    {
+        "id": "biz-20",
+        "title": "Crisis Management Plan",
+        "description": "Prepare for PR disasters before they happen",
+        "prompt": "Create a Crisis Communication Plan for [COMPANY TYPE].\n\nPotential Scenario: [SCENARIO, e.g., Data Breach, CEO Scandal]\n\nDraft:\n1. Internal Memo to employees\n2. Public Statement/Press Release\n3. Social Media Response\n4. FAQ for Customer Support\n\nKey Principles:\n- Speed\n- Transparency\n- Empathy\n- Action",
+        "category": "business",
+        "tags": [
+            "PR",
+            "management",
+            "business"
+        ]
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "id": "mj-1",
+        "title": "Cinematic Portrait Photography",
+        "description": "Create stunning movie-quality portrait shots",
+        "prompt": "Portrait of [SUBJECT DESCRIPTION], cinematic lighting, shot on ARRI Alexa, anamorphic lens flare, shallow depth of field, golden hour, film grain, color graded like [MOVIE REFERENCE], 8k, photorealistic --ar 16:9 --v 6",
+        "category": "midjourney",
+        "tags": [
+            "portrait",
+            "cinematic",
+            "photography"
+        ]
+    },
+    {
+        "id": "mj-2",
+        "title": "Product Photography for E-commerce",
+        "description": "Professional product shots perfect for online stores",
+        "prompt": "Professional product photography of [PRODUCT], studio lighting, seamless white background, commercial photography, sharp focus, high-end advertising style, soft shadows, 8k resolution, photorealistic, centered composition --ar 1:1 --v 6",
+        "category": "midjourney",
+        "tags": [
+            "product",
+            "ecommerce",
+            "commercial"
+        ]
+    },
+    {
+        "id": "mj-3",
+        "title": "Fantasy Book Cover Art",
+        "description": "Epic fantasy artwork for book covers and posters",
+        "prompt": "Epic fantasy book cover art, [SCENE DESCRIPTION], dramatic lighting, painted by Greg Rutkowski and Magali Villeneuve, intricate details, volumetric fog, epic scale, rich colors, fantasy illustration, trending on ArtStation --ar 2:3 --v 6",
+        "category": "midjourney",
+        "tags": [
+            "fantasy",
+            "book cover",
+            "illustration"
+        ]
+    },
+    {
+        "id": "mj-4",
+        "title": "Modern Logo Design",
+        "description": "Clean, professional logo concepts",
+        "prompt": "Minimalist logo design for [BRAND/CONCEPT], vector style, clean lines, modern, professional, simple geometric shapes, flat design, scalable, on white background, graphic design, behance style --v 6",
+        "category": "midjourney",
+        "tags": [
+            "logo",
+            "branding",
+            "design"
+        ]
+    },
+    {
+        "id": "mj-5",
+        "title": "Architectural Visualization",
+        "description": "Photorealistic architectural renders",
+        "prompt": "Architectural visualization of [BUILDING TYPE], modern architecture, floor-to-ceiling windows, natural lighting, lush landscaping, photorealistic render, Unreal Engine 5, ray tracing, architectural photography, ArchDaily style --ar 16:9 --v 6",
+        "category": "midjourney",
+        "tags": [
+            "architecture",
+            "visualization",
+            "real estate"
+        ]
+    },
+    {
+        "id": "mj-6",
+        "title": "Food Photography",
+        "description": "Mouthwatering food photography for restaurants and blogs",
+        "prompt": "Professional food photography of [DISH], overhead angle, rustic wooden table, natural window lighting, garnished beautifully, shallow depth of field, food styling, editorial quality, Bon Appetit magazine style, appetizing, 8k --ar 4:5 --v 6",
+        "category": "midjourney",
+        "tags": [
+            "food",
+            "photography",
+            "restaurant"
+        ]
+    },
+    {
+        "id": "mj-7",
+        "title": "Children's Book Illustration",
+        "description": "Whimsical illustrations perfect for kids' books",
+        "prompt": "Children's book illustration of [SCENE], whimsical style, soft pastel colors, hand-painted watercolor texture, cute characters, storybook illustration, gentle lighting, inspired by Oliver Jeffers and Jon Klassen, heartwarming, full page illustration --ar 3:4 --v 6",
+        "category": "midjourney",
+        "tags": [
+            "illustration",
+            "children",
+            "book"
+        ]
+    },
+    {
+        "id": "mj-8",
+        "title": "Sci-Fi Concept Art",
+        "description": "Futuristic sci-fi environments and vehicles",
+        "prompt": "Science fiction concept art, [SUBJECT], futuristic, cyberpunk aesthetic, neon lights, detailed mechanical design, atmospheric perspective, concept design for film, matte painting style, by Syd Mead and Simon Stalenhag, cinematic composition --ar 21:9 --v 6",
+        "category": "midjourney",
+        "tags": [
+            "scifi",
+            "concept art",
+            "futuristic"
+        ]
+    },
+    {
+        "id": "mj-9",
+        "title": "Fashion Editorial",
+        "description": "High-fashion photography for magazines",
+        "prompt": "High fashion editorial photography, model wearing [OUTFIT DESCRIPTION], dramatic pose, studio lighting with colored gels, Vogue magazine style, shot by Mario Testino, avant-garde, striking composition, professional fashion photography --ar 2:3 --v 6",
+        "category": "midjourney",
+        "tags": [
+            "fashion",
+            "editorial",
+            "photography"
+        ]
+    },
+    {
+        "id": "mj-10",
+        "title": "Isometric Game Art",
+        "description": "Detailed isometric illustrations for games and infographics",
+        "prompt": "Isometric illustration of [SCENE/BUILDING], game art style, vibrant colors, detailed, cute aesthetic, clean lines, pixel-perfect, 3D isometric view, bright lighting, mobile game style, high detail --v 6",
+        "category": "midjourney",
+        "tags": [
+            "isometric",
+            "game art",
+            "illustration"
+        ]
+    }
+]

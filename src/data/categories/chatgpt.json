@@ -1,0 +1,122 @@
+[
+    {
+        "id": "chatgpt-1",
+        "title": "Expert Advisor Persona",
+        "description": "Transform ChatGPT into a domain expert for in-depth consultations",
+        "prompt": "You are a world-class expert in [FIELD]. You have 20+ years of experience and have consulted for Fortune 500 companies.\n\nWhen I ask you questions:\n1. Provide detailed, actionable advice\n2. Include specific examples and case studies\n3. Anticipate follow-up questions and address them\n4. If something is outside your expertise, say so\n\nMy first question is: [YOUR QUESTION]",
+        "category": "chatgpt",
+        "tags": [
+            "productivity",
+            "expert",
+            "consulting"
+        ]
+    },
+    {
+        "id": "chatgpt-2",
+        "title": "Content Repurposing Machine",
+        "description": "Turn one piece of content into 10 different formats",
+        "prompt": "I'm going to share a piece of content with you. Transform it into ALL of the following formats:\n\n1. Twitter/X thread (5-7 tweets)\n2. LinkedIn post (professional tone)\n3. Instagram caption (with emoji and hashtags)\n4. YouTube video script outline\n5. Email newsletter snippet\n6. Blog post introduction\n7. Podcast talking points\n8. TikTok script (under 60 seconds)\n9. Pinterest pin description\n10. Reddit post\n\nHere's my original content:\n[PASTE YOUR CONTENT]",
+        "category": "chatgpt",
+        "tags": [
+            "content",
+            "marketing",
+            "social media"
+        ]
+    },
+    {
+        "id": "chatgpt-3",
+        "title": "Meeting Notes to Action Items",
+        "description": "Extract clear action items and decisions from messy meeting notes",
+        "prompt": "Analyze my meeting notes and provide:\n\n1. **Key Decisions Made** - List each decision clearly\n2. **Action Items** - Format as: [OWNER] - [TASK] - [DEADLINE if mentioned]\n3. **Open Questions** - Items that need follow-up\n4. **Summary** - 2-3 sentence overview\n\nMeeting Notes:\n[PASTE YOUR NOTES]",
+        "category": "chatgpt",
+        "tags": [
+            "productivity",
+            "meetings",
+            "business"
+        ]
+    },
+    {
+        "id": "chatgpt-4",
+        "title": "Code Debugging Assistant",
+        "description": "Systematic approach to finding and fixing bugs in your code",
+        "prompt": "You are a senior software engineer helping me debug code.\n\nWhen I share code with an error:\n1. Identify the likely cause of the error\n2. Explain WHY the error occurs (help me learn)\n3. Provide the corrected code\n4. Suggest improvements for code quality\n5. Warn about potential edge cases\n\nMy code and error:\n[PASTE CODE AND ERROR MESSAGE]",
+        "category": "chatgpt",
+        "tags": [
+            "coding",
+            "debugging",
+            "programming"
+        ]
+    },
+    {
+        "id": "chatgpt-5",
+        "title": "Customer Email Response Generator",
+        "description": "Professional customer service responses for any situation",
+        "prompt": "Write a professional customer service email response.\n\nContext:\n- Customer issue: [DESCRIBE THE ISSUE]\n- Tone needed: [apologetic/informative/firm but polite]\n- Resolution offered: [WHAT YOU CAN DO]\n- Company name: [YOUR COMPANY]\n\nRequirements:\n- Acknowledge their frustration\n- Take ownership\n- Provide clear next steps\n- End positively",
+        "category": "chatgpt",
+        "tags": [
+            "business",
+            "customer service",
+            "email"
+        ]
+    },
+    {
+        "id": "chatgpt-6",
+        "title": "Learn Any Skill Fast",
+        "description": "Create a personalized learning curriculum for any skill",
+        "prompt": "Create a complete learning plan for me to become proficient in [SKILL].\n\nMy details:\n- Current level: [beginner/intermediate/advanced]\n- Time available: [X hours per week]\n- Learning style: [visual/reading/hands-on/video]\n- Goal: [What I want to achieve]\n\nProvide:\n1. Week-by-week curriculum (8 weeks)\n2. Best free resources for each topic\n3. Practice exercises\n4. Milestones to track progress\n5. Common mistakes to avoid",
+        "category": "chatgpt",
+        "tags": [
+            "learning",
+            "education",
+            "productivity"
+        ]
+    },
+    {
+        "id": "chatgpt-7",
+        "title": "Sales Email Sequence",
+        "description": "Generate a complete cold email sequence that converts",
+        "prompt": "Create a 5-email cold outreach sequence for my business.\n\nBusiness: [YOUR BUSINESS]\nTarget audience: [WHO YOU'RE TARGETING]\nPain point we solve: [MAIN PROBLEM YOU SOLVE]\nUnique value: [WHAT MAKES YOU DIFFERENT]\n\nFor each email provide:\n- Subject line (with A/B variant)\n- Email body\n- Call to action\n- Days to wait before next email\n\nMake them conversational, not salesy.",
+        "category": "chatgpt",
+        "tags": [
+            "sales",
+            "email",
+            "marketing"
+        ]
+    },
+    {
+        "id": "chatgpt-8",
+        "title": "YouTube Script Writer",
+        "description": "Create engaging YouTube scripts with hooks and retention",
+        "prompt": "Write a YouTube video script on: [TOPIC]\n\nTarget length: [X] minutes\nTarget audience: [DESCRIBE AUDIENCE]\n\nInclude:\n1. Hook (first 30 seconds to stop the scroll)\n2. Pattern interrupt at 2-minute mark\n3. Main content with clear sections\n4. Engagement prompts (like, subscribe, comment)\n5. Strong call-to-action ending\n6. Timestamps/chapters\n\nTone: [casual/professional/educational/entertaining]",
+        "category": "chatgpt",
+        "tags": [
+            "youtube",
+            "content",
+            "video"
+        ]
+    },
+    {
+        "id": "chatgpt-9",
+        "title": "Resume Bullet Point Optimizer",
+        "description": "Transform weak resume bullets into achievement-focused statements",
+        "prompt": "Rewrite my resume bullet points to be more impactful.\n\nFor each bullet point I provide:\n1. Rewrite using the XYZ formula: \"Accomplished [X] as measured by [Y], by doing [Z]\"\n2. Add quantifiable metrics (suggest realistic numbers if I don't have them)\n3. Use strong action verbs\n4. Highlight the impact, not just the task\n\nMy current bullet points:\n[PASTE YOUR BULLETS]",
+        "category": "chatgpt",
+        "tags": [
+            "career",
+            "resume",
+            "job search"
+        ]
+    },
+    {
+        "id": "chatgpt-10",
+        "title": "Product Description Writer",
+        "description": "Create compelling product descriptions that sell",
+        "prompt": "Write a high-converting product description.\n\nProduct: [NAME]\nKey features: [LIST FEATURES]\nTarget customer: [WHO BUYS THIS]\nPrice point: [PRICE]\nPlatform: [Amazon/Shopify/website]\n\nInclude:\n1. Attention-grabbing headline\n2. Opening hook addressing pain point\n3. Benefits (not just features)\n4. Social proof placeholder\n5. Urgency element\n6. Clear CTA\n\nUse sensory language and emotional triggers.",
+        "category": "chatgpt",
+        "tags": [
+            "ecommerce",
+            "copywriting",
+            "sales"
+        ]
+    }
+]

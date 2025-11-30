@@ -1,0 +1,122 @@
+[
+    {
+        "id": "claude-1",
+        "title": "Deep Research Assistant",
+        "description": "Get comprehensive research with multiple perspectives",
+        "prompt": "I need you to research [TOPIC] thoroughly.\n\nProvide:\n1. **Overview** - Core concepts explained simply\n2. **Key perspectives** - Different viewpoints/schools of thought\n3. **Evidence** - Data, studies, and sources that support each view\n4. **Controversies** - Where experts disagree and why\n5. **Practical implications** - What this means for [MY CONTEXT]\n6. **Knowledge gaps** - What's still unknown or debated\n7. **Further reading** - Recommended resources to go deeper\n\nBe balanced and note when you're uncertain.",
+        "category": "claude",
+        "tags": [
+            "research",
+            "analysis",
+            "learning"
+        ]
+    },
+    {
+        "id": "claude-2",
+        "title": "Code Review Partner",
+        "description": "Get a thorough code review with security and performance insights",
+        "prompt": "Review my code as a senior engineer would.\n\nAnalyze for:\n1. **Bugs & Logic Errors** - Identify issues that would cause problems\n2. **Security Vulnerabilities** - OWASP top 10 and common pitfalls\n3. **Performance** - Inefficiencies and optimization opportunities\n4. **Readability** - Naming, structure, comments\n5. **Best Practices** - Design patterns and idioms for this language\n6. **Test Coverage** - What tests should be written\n\nFor each issue: explain why it matters and show the fix.\n\n```\n[PASTE YOUR CODE]\n```",
+        "category": "claude",
+        "tags": [
+            "coding",
+            "review",
+            "programming"
+        ]
+    },
+    {
+        "id": "claude-3",
+        "title": "Document Analyzer & Summarizer",
+        "description": "Extract key insights from long documents with structured analysis",
+        "prompt": "Analyze this document and provide:\n\n1. **Executive Summary** (3-4 sentences)\n2. **Key Points** - The 5-7 most important takeaways\n3. **Data & Statistics** - Notable numbers and what they mean\n4. **Recommendations/Actions** - What the document suggests doing\n5. **Questions Raised** - What's unclear or needs follow-up\n6. **Critique** - Potential weaknesses in arguments or gaps\n\nDocument:\n[PASTE DOCUMENT]",
+        "category": "claude",
+        "tags": [
+            "analysis",
+            "documents",
+            "productivity"
+        ]
+    },
+    {
+        "id": "claude-4",
+        "title": "Technical Explainer",
+        "description": "Break down complex topics into understandable explanations",
+        "prompt": "Explain [COMPLEX TOPIC] to me.\n\nMy background: [YOUR EXPERIENCE LEVEL]\nWhy I need to understand this: [CONTEXT]\n\nPlease:\n1. Start with an analogy to something familiar\n2. Build up concepts step by step\n3. Use concrete examples at each step\n4. Highlight common misconceptions\n5. Explain why it matters/practical applications\n6. Suggest how to learn more\n\nCheck in with me after each major concept.",
+        "category": "claude",
+        "tags": [
+            "learning",
+            "technical",
+            "education"
+        ]
+    },
+    {
+        "id": "claude-5",
+        "title": "Decision Framework Builder",
+        "description": "Create structured frameworks for complex decisions",
+        "prompt": "Help me make this decision: [DECISION]\n\nContext: [BACKGROUND]\nTimeline: [WHEN NEEDED]\nStakeholders: [WHO'S AFFECTED]\n\nBuild me a decision framework:\n1. **Criteria** - What factors matter most (help me weight them)\n2. **Options Analysis** - Pros/cons/risks for each path\n3. **Second-order effects** - Downstream consequences\n4. **Reversibility** - How easy to change course\n5. **Information gaps** - What I should find out before deciding\n6. **Recommendation** - Based on what you know, what would you suggest and why",
+        "category": "claude",
+        "tags": [
+            "decisions",
+            "strategy",
+            "analysis"
+        ]
+    },
+    {
+        "id": "claude-6",
+        "title": "Contract & Legal Document Review",
+        "description": "Identify key terms, risks, and negotiation points in contracts",
+        "prompt": "Review this contract/agreement as if you were my advisor.\n\nI am the: [buyer/seller/employee/contractor]\nThis is for: [CONTEXT]\n\nIdentify:\n1. **Key Terms** - Important obligations and rights\n2. **Red Flags** - Unusual or concerning clauses\n3. **Missing Protections** - Standard clauses that aren't included\n4. **Negotiation Points** - What I should push back on\n5. **Plain English Summary** - What I'm actually agreeing to\n6. **Questions to Ask** - Clarifications needed before signing\n\nNote: This isn't legal advice - recommend consulting a lawyer for important contracts.\n\nContract:\n[PASTE CONTRACT]",
+        "category": "claude",
+        "tags": [
+            "legal",
+            "contracts",
+            "business"
+        ]
+    },
+    {
+        "id": "claude-7",
+        "title": "Debate Partner",
+        "description": "Strengthen your arguments by having Claude argue against you",
+        "prompt": "I want to strengthen my position on: [YOUR POSITION]\n\nFirst, I'll share my arguments. Then:\n1. **Steel-man the opposition** - Give me the strongest counter-arguments\n2. **Identify weaknesses** - Where is my reasoning vulnerable?\n3. **Provide evidence** - What data/studies would opponents cite?\n4. **Suggest responses** - How can I address each counter-argument?\n5. **Rate my position** - On a scale of 1-10, how defensible is it?\n\nMy current arguments:\n[YOUR ARGUMENTS]",
+        "category": "claude",
+        "tags": [
+            "thinking",
+            "debate",
+            "analysis"
+        ]
+    },
+    {
+        "id": "claude-8",
+        "title": "Writing Editor & Coach",
+        "description": "Get detailed feedback to improve your writing",
+        "prompt": "Edit and provide feedback on my writing.\n\nType of writing: [essay/article/story/email/etc]\nGoal: [persuade/inform/entertain/etc]\nAudience: [WHO'S READING]\nTone I want: [formal/casual/authoritative/etc]\n\nProvide:\n1. **Overall Assessment** - First impression and main issues\n2. **Structure** - Is the flow logical? Suggested reordering\n3. **Clarity** - Confusing sentences, rewritten clearly\n4. **Engagement** - Where it's boring, how to fix\n5. **Word Choice** - Weak words and stronger alternatives\n6. **Final Edit** - The piece with your suggested changes\n\nMy writing:\n[PASTE YOUR WRITING]",
+        "category": "claude",
+        "tags": [
+            "writing",
+            "editing",
+            "feedback"
+        ]
+    },
+    {
+        "id": "claude-9",
+        "title": "Business Strategy Consultant",
+        "description": "Get strategic analysis and recommendations for business challenges",
+        "prompt": "Act as a McKinsey consultant analyzing my business challenge.\n\nBusiness: [DESCRIBE YOUR BUSINESS]\nChallenge: [THE PROBLEM/OPPORTUNITY]\nConstraints: [BUDGET/TIME/RESOURCES]\n\nProvide:\n1. **Situation Analysis** - Key factors at play\n2. **Framework** - Apply relevant strategic frameworks (Porter's, SWOT, etc.)\n3. **Options** - 3-4 strategic paths forward\n4. **Recommendation** - Your suggested approach with rationale\n5. **Implementation** - Key steps and priorities\n6. **Risks & Mitigations** - What could go wrong and how to prevent it\n7. **Metrics** - How to measure success",
+        "category": "claude",
+        "tags": [
+            "strategy",
+            "business",
+            "consulting"
+        ]
+    },
+    {
+        "id": "claude-10",
+        "title": "Data Interpretation Assistant",
+        "description": "Get insights and visualizations suggestions from your data",
+        "prompt": "Analyze this data and help me understand it.\n\nContext: [WHAT THIS DATA IS / WHERE IT'S FROM]\nMy goal: [WHAT DECISIONS THIS SHOULD INFORM]\n\nPlease:\n1. **Summary Statistics** - Key numbers and what they tell us\n2. **Patterns & Trends** - What stands out?\n3. **Anomalies** - Unexpected values and possible explanations\n4. **Correlations** - Relationships between variables\n5. **Visualization Recommendations** - Best chart types for this data\n6. **Insights** - Actionable conclusions\n7. **Caveats** - Limitations of this analysis\n\nData:\n[PASTE YOUR DATA]",
+        "category": "claude",
+        "tags": [
+            "data",
+            "analysis",
+            "insights"
+        ]
+    }
+]

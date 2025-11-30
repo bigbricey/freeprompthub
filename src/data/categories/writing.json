@@ -1,0 +1,122 @@
+[
+    {
+        "id": "write-1",
+        "title": "Blog Post Outline Generator",
+        "description": "Create comprehensive blog post outlines optimized for SEO",
+        "prompt": "Create a detailed blog post outline.\n\nTopic: [YOUR TOPIC]\nTarget keyword: [MAIN KEYWORD]\nWord count goal: [LENGTH]\nAudience: [WHO'S READING]\n\nInclude:\n1. 5 title options (include keyword naturally)\n2. Meta description (155 characters)\n3. Introduction hook options\n4. H2 and H3 subheadings with hierarchy\n5. Key points to cover under each section\n6. Where to include examples/data\n7. Internal linking opportunities\n8. Conclusion with CTA\n9. FAQ section (3-5 questions)",
+        "category": "writing",
+        "tags": [
+            "blogging",
+            "SEO",
+            "content"
+        ]
+    },
+    {
+        "id": "write-2",
+        "title": "Story Opening Hook Generator",
+        "description": "Create compelling first paragraphs that hook readers",
+        "prompt": "Write 5 different opening paragraphs for my story.\n\nGenre: [GENRE]\nMain character: [BRIEF DESCRIPTION]\nCore conflict: [THE PROBLEM]\nTone: [dark/light/suspenseful/etc]\n\nCreate openings using these techniques:\n1. In medias res (start in action)\n2. Provocative statement\n3. Dialogue hook\n4. Sensory immersion\n5. Mystery/question\n\nEach opening should make readers NEED to continue.",
+        "category": "writing",
+        "tags": [
+            "fiction",
+            "creative writing",
+            "storytelling"
+        ]
+    },
+    {
+        "id": "write-3",
+        "title": "Social Media Caption Pack",
+        "description": "Generate a week's worth of engaging social media content",
+        "prompt": "Create 7 days of social media content.\n\nBusiness/Brand: [DESCRIPTION]\nPlatform: [Instagram/Twitter/LinkedIn]\nGoal: [engagement/sales/followers]\nTone: [professional/casual/funny]\n\nFor each day provide:\n1. Caption (platform-appropriate length)\n2. Emoji usage\n3. Hashtags (if applicable)\n4. Best posting time\n5. Engagement question or CTA\n6. Content type suggestion (carousel/video/static)\n\nInclude a mix of: educational, entertaining, promotional, personal.",
+        "category": "writing",
+        "tags": [
+            "social media",
+            "captions",
+            "content"
+        ]
+    },
+    {
+        "id": "write-4",
+        "title": "Email Newsletter Template",
+        "description": "Engaging newsletter format that gets opens and clicks",
+        "prompt": "Write a newsletter email for my audience.\n\nNewsletter name: [NAME]\nTopic for this issue: [TOPIC]\nAudience: [SUBSCRIBERS]\nTone: [friendly/professional/witty]\n\nInclude:\n1. Subject line (5 options with open-rate predictions)\n2. Preview text\n3. Greeting\n4. Hook/opener (personal touch)\n5. Main content (valuable, scannable)\n6. One key takeaway\n7. Resource or link\n8. Personal sign-off\n9. P.S. line (important - many read this!)",
+        "category": "writing",
+        "tags": [
+            "email",
+            "newsletter",
+            "marketing"
+        ]
+    },
+    {
+        "id": "write-5",
+        "title": "Character Development Worksheet",
+        "description": "Create deep, believable characters for your stories",
+        "prompt": "Help me develop a character for my story.\n\nRole in story: [protagonist/antagonist/supporting]\nGenre: [GENRE]\nInitial concept: [BASIC IDEA]\n\nCreate:\n1. Full name and nickname\n2. Physical description (distinctive details)\n3. Background (family, education, key events)\n4. Personality traits (3 strengths, 3 flaws)\n5. Core motivation (what they want)\n6. Secret/hidden aspect\n7. Speech pattern (how they talk)\n8. Mannerisms (physical habits)\n9. Character arc (how they change)\n10. Relationship dynamics\n11. Memorable quote they would say",
+        "category": "writing",
+        "tags": [
+            "character",
+            "fiction",
+            "creative writing"
+        ]
+    },
+    {
+        "id": "write-6",
+        "title": "Press Release Template",
+        "description": "Professional press release for product launches and announcements",
+        "prompt": "Write a press release.\n\nCompany: [NAME]\nAnnouncement: [WHAT'S NEW]\nDate: [WHEN]\nKey details: [IMPORTANT FACTS]\nQuote from: [SPOKESPERSON AND TITLE]\n\nFormat:\n1. Headline (active, newsworthy)\n2. Subheadline\n3. Dateline and lead paragraph (who, what, when, where, why)\n4. Supporting paragraphs\n5. Quote from company leader\n6. Background/boilerplate\n7. Media contact information\n8. ### to end\n\nKeep it to one page.",
+        "category": "writing",
+        "tags": [
+            "PR",
+            "press release",
+            "business"
+        ]
+    },
+    {
+        "id": "write-7",
+        "title": "Dialogue Scene Writer",
+        "description": "Write realistic dialogue that reveals character and advances plot",
+        "prompt": "Write a dialogue scene for my story.\n\nCharacters involved: [LIST WITH BRIEF DESCRIPTIONS]\nSetting: [WHERE THIS HAPPENS]\nPurpose of scene: [WHAT NEEDS TO HAPPEN]\nSubtext: [WHAT'S UNSAID BUT FELT]\nTone: [tense/romantic/funny/etc]\n\nRequirements:\n- Each character has distinct voice\n- Include action beats between dialogue\n- Show don't tell emotions\n- Advance the plot\n- Reveal character\n- Natural interruptions and pauses",
+        "category": "writing",
+        "tags": [
+            "dialogue",
+            "fiction",
+            "screenwriting"
+        ]
+    },
+    {
+        "id": "write-8",
+        "title": "Copywriting Headline Formulas",
+        "description": "Generate attention-grabbing headlines using proven formulas",
+        "prompt": "Generate 20 headlines for my [PRODUCT/CONTENT].\n\nTopic: [TOPIC]\nBenefit: [MAIN BENEFIT]\nAudience: [TARGET READER]\nTone: [urgent/curious/professional]\n\nUse these formulas:\n- How to [benefit] without [pain]\n- [Number] ways to [achieve desired result]\n- Why [common belief] is wrong\n- The secret to [desired outcome]\n- What [authority figures] don't want you to know\n- [Do this] to [get result] in [timeframe]\n- Warning: [avoid this mistake]\n\nRate each headline 1-10 for click potential.",
+        "category": "writing",
+        "tags": [
+            "copywriting",
+            "headlines",
+            "marketing"
+        ]
+    },
+    {
+        "id": "write-9",
+        "title": "Book Chapter Summary for Nonfiction",
+        "description": "Outline nonfiction book chapters with key points",
+        "prompt": "Help me outline a chapter for my nonfiction book.\n\nBook topic: [OVERALL SUBJECT]\nThis chapter's focus: [SPECIFIC TOPIC]\nChapter number: [WHERE IN BOOK]\nTarget reader: [AUDIENCE]\nDesired length: [WORD COUNT]\n\nCreate:\n1. Chapter title options (5)\n2. Opening hook/anecdote\n3. Key concepts to cover (5-7)\n4. Stories/examples to include\n5. Data or research to reference\n6. Practical exercises or applications\n7. Common mistakes/misconceptions\n8. Chapter summary\n9. Transition to next chapter",
+        "category": "writing",
+        "tags": [
+            "nonfiction",
+            "book writing",
+            "outline"
+        ]
+    },
+    {
+        "id": "write-10",
+        "title": "Website Copy Generator",
+        "description": "Convert features into compelling website copy",
+        "prompt": "Write website copy for my business.\n\nBusiness: [WHAT YOU DO]\nTarget customer: [WHO]\nKey differentiator: [WHY YOU]\nTone: [professional/friendly/bold]\n\nCreate copy for:\n1. Homepage hero (headline + subheadline + CTA)\n2. About section (our story in 100 words)\n3. Services/Products section (with benefits)\n4. How it works (3-step process)\n5. Trust signals section\n6. FAQ section (5 questions)\n7. Final CTA section\n\nMake it scannable with clear hierarchy.",
+        "category": "writing",
+        "tags": [
+            "website",
+            "copywriting",
+            "business"
+        ]
+    }
+]
