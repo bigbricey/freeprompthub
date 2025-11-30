@@ -43,67 +43,66 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0B1121]">
+    <div className="min-h-screen relative">
+      <div className="stars-bg"></div>
       <Header />
 
-      <main>
+      <main className="relative z-10">
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-24 pb-32">
-          {/* Background Gradients */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl opacity-30 pointer-events-none">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-            <div className="absolute top-20 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-          </div>
-
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:border-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 mb-8">
+        <section className="relative pt-32 pb-40 text-center">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-950/30 px-4 py-1.5 text-sm font-medium text-cyan-300 mb-8 backdrop-blur-md">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
               </span>
-              Now with {Object.values(prompts).flat().length}+ Prompts
+              System Online: {Object.values(prompts).flat().length} Modules Active
             </div>
 
-            <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl dark:text-white mb-6">
-              Master AI with <br />
-              <span className="text-gradient">Premium Prompts</span>
+            <h1 className="text-6xl font-bold tracking-tight text-white sm:text-8xl mb-6 drop-shadow-[0_0_35px_rgba(168,85,247,0.5)]">
+              EXPLORE THE <br />
+              <span className="text-gradient-cosmic">PROMPT UNIVERSE</span>
             </h1>
 
-            <p className="mx-auto max-w-2xl text-lg text-slate-600 dark:text-slate-400 mb-10">
-              Stop guessing. Start creating. Access our curated library of high-performance prompts for Business, Coding, Marketing, and more. 100% Free.
+            <p className="mx-auto max-w-2xl text-xl text-slate-300 mb-12 leading-relaxed">
+              Navigate through a galaxy of high-performance AI prompts. <br />
+              Your command center for Business, Coding, and Creative Intelligence.
             </p>
 
             {/* Search Bar */}
-            <div className="mx-auto max-w-2xl relative">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <svg className="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <input
-                type="text"
-                placeholder="Search for 'Real Estate' or 'Python'..."
-                className="block w-full rounded-2xl border-0 py-4 pl-12 pr-4 text-slate-900 shadow-xl ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg dark:bg-slate-800/80 dark:text-white dark:ring-slate-700 dark:placeholder:text-slate-500 backdrop-blur-sm"
-              />
-              <div className="absolute inset-y-2 right-2">
-                <button className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                  Search
-                </button>
+            <div className="mx-auto max-w-2xl relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <svg className="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Initiate Search Sequence..."
+                  className="block w-full rounded-xl border-0 py-4 pl-12 pr-32 text-white bg-black/80 shadow-2xl ring-1 ring-inset ring-white/10 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-cyan-500 sm:text-lg backdrop-blur-xl"
+                />
+                <div className="absolute inset-y-2 right-2">
+                  <button className="rounded-lg bg-cyan-600 px-6 py-2 text-sm font-bold text-white shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:bg-cyan-500 hover:shadow-[0_0_25px_rgba(6,182,212,0.8)] transition-all duration-300">
+                    ENGAGE
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Categories Grid */}
-        <section id="categories" className="py-24 bg-white dark:bg-[#0B1121]">
+        <section id="categories" className="py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-                Explore Categories
+            <div className="flex items-center justify-between mb-12 border-b border-white/10 pb-6">
+              <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
+                <span className="w-2 h-8 bg-purple-500 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8)]"></span>
+                SECTOR GRID
               </h2>
-              <span className="text-sm text-slate-500 dark:text-slate-400">
-                {categoriesList.length} Categories Available
+              <span className="text-sm font-mono text-cyan-400">
+                // {categoriesList.length} SECTORS DETECTED
               </span>
             </div>
 
@@ -112,28 +111,33 @@ export default function Home() {
                 <Link
                   key={category.slug}
                   href={`/${category.slug}`}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-xl transition-all duration-300 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-indigo-500/30"
+                  className="holo-card group relative overflow-hidden rounded-xl p-6"
                 >
-                  <div className={`absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br ${category.gradient} opacity-10 blur-2xl group-hover:opacity-20 transition-opacity`}></div>
+                  <div className={`absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-gradient-to-br ${category.gradient} opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-500`}></div>
 
-                  <div className="relative">
-                    <div className={`inline-flex rounded-xl bg-gradient-to-br ${category.gradient} p-3 text-white shadow-lg mb-4`}>
+                  <div className="relative z-10">
+                    <div className={`inline-flex rounded-lg bg-gradient-to-br ${category.gradient} p-3 text-white shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       {category.icon}
                     </div>
 
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-white mb-2 tracking-wide group-hover:text-cyan-300 transition-colors">
                       {category.name}
                     </h3>
 
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">
+                    <p className="text-sm text-slate-400 mb-6 line-clamp-2 group-hover:text-slate-200 transition-colors">
                       {category.description}
                     </p>
 
-                    <div className="flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 group-hover:translate-x-1 transition-transform">
-                      {category.count} Prompts
-                      <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                    <div className="flex items-center justify-between border-t border-white/5 pt-4">
+                      <span className="text-xs font-mono text-cyan-500">
+                        ID: {category.slug.toUpperCase()}
+                      </span>
+                      <div className="flex items-center text-xs font-bold text-purple-400 group-hover:translate-x-1 transition-transform">
+                        ACCESS DATA
+                        <svg className="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </Link>
