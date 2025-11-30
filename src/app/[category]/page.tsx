@@ -98,6 +98,12 @@ export default async function CategoryPage({ params }: Props) {
                                 Curated collection of the best AI prompts for {categoryName}.
                                 Copy, paste, and get results instantly.
                             </p>
+
+                            {/* SEO Content Slot (Hidden by default until text provided) */}
+                            <div id="seo-content" className="mt-8 text-left prose prose-slate dark:prose-invert max-w-none hidden">
+                                {/* Placeholder for future SEO text */}
+                                <p>Detailed guide on how to use {categoryName} prompts effectively...</p>
+                            </div>
                         </div>
                     </div>
                 </section>

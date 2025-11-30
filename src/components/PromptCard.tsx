@@ -86,9 +86,8 @@ export default function PromptCard({ prompt }: PromptCardProps) {
       {/* Prompt content */}
       <div className="relative">
         <div
-          className={`rounded-lg bg-slate-50 p-4 dark:bg-slate-900 ${
-            expanded ? "" : "max-h-32 overflow-hidden"
-          }`}
+          className={`rounded-lg bg-slate-50 p-4 dark:bg-slate-900 ${expanded ? "" : "max-h-32 overflow-hidden"
+            }`}
         >
           <pre className="whitespace-pre-wrap font-mono text-sm text-slate-700 dark:text-slate-300">
             {prompt.prompt}
@@ -101,8 +100,8 @@ export default function PromptCard({ prompt }: PromptCardProps) {
         )}
       </div>
 
-      {/* Actions */}
-      <div className="mt-4 flex items-center justify-between">
+      {/* Actions (Sticky on Mobile) */}
+      <div className="mt-4 flex items-center justify-between sticky bottom-0 bg-white dark:bg-slate-800 py-2 -mb-2 border-t border-slate-100 dark:border-slate-700/50 z-10">
         <button
           onClick={() => setExpanded(!expanded)}
           className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
@@ -112,11 +111,10 @@ export default function PromptCard({ prompt }: PromptCardProps) {
 
         <button
           onClick={copyToClipboard}
-          className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors ${
-            copied
+          className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors shadow-sm ${copied
               ? "bg-green-600 hover:bg-green-700"
               : "bg-indigo-600 hover:bg-indigo-700"
-          }`}
+            }`}
         >
           {copied ? (
             <>
