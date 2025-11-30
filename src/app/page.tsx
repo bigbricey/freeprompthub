@@ -1,7 +1,11 @@
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { prompts } from "@/data/prompts";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 // Helper to get category metadata (icon, color, description)
 function getCategoryMeta(category: string) {
@@ -31,7 +35,41 @@ function getCategoryMeta(category: string) {
   return meta[category] || meta.default;
 }
 
+const recommendedTools = [
+  {
+    name: "Copy.ai",
+    description: "Generate marketing copy, blog posts, and emails 10x faster.",
+    href: "#", // Add affiliate link here
+    icon: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>,
+    gradient: "from-violet-500 to-purple-600",
+  },
+  {
+    name: "Jasper",
+    description: "The AI copywriter for enterprise teams. Brand voice & SEO built-in.",
+    href: "#", // Add affiliate link here
+    icon: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
+    gradient: "from-orange-500 to-red-600",
+  },
+  {
+    name: "Survey Junkie",
+    description: "Earn cash for your opinion. Great side hustle for beginners.",
+    href: "#", // Add affiliate link here
+    icon: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+    gradient: "from-green-500 to-emerald-600",
+  },
+];
+
 export default function Home() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
   const categoriesList = Object.keys(prompts).map(key => {
     const meta = getCategoryMeta(key);
     return {
@@ -72,7 +110,7 @@ export default function Home() {
             {/* Search Bar */}
             <div className="mx-auto max-w-2xl relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative">
+              <form onSubmit={handleSearch} className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <svg className="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -80,15 +118,20 @@ export default function Home() {
                 </div>
                 <input
                   type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Initiate Search Sequence..."
                   className="block w-full rounded-xl border-0 py-4 pl-12 pr-32 text-white bg-black/80 shadow-2xl ring-1 ring-inset ring-white/10 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-cyan-500 sm:text-lg backdrop-blur-xl"
                 />
                 <div className="absolute inset-y-2 right-2">
-                  <button className="rounded-lg bg-cyan-600 px-6 py-2 text-sm font-bold text-white shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:bg-cyan-500 hover:shadow-[0_0_25px_rgba(6,182,212,0.8)] transition-all duration-300">
+                  <button
+                    type="submit"
+                    className="rounded-lg bg-cyan-600 px-6 py-2 text-sm font-bold text-white shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:bg-cyan-500 hover:shadow-[0_0_25px_rgba(6,182,212,0.8)] transition-all duration-300"
+                  >
                     ENGAGE
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </section>
@@ -141,6 +184,56 @@ export default function Home() {
                     </div>
                   </div>
                 </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Recommended Tools (Monetization) */}
+        <section className="py-24 border-t border-white/10 bg-black/30">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold tracking-tight text-white flex items-center justify-center gap-3">
+                <span className="w-2 h-8 bg-cyan-500 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.8)]"></span>
+                RECOMMENDED TOOLS
+              </h2>
+              <p className="mt-4 text-slate-400">
+                // High-performance tools to execute these prompts
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {recommendedTools.map((tool) => (
+                <a
+                  key={tool.name}
+                  href={tool.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="holo-card group relative overflow-hidden rounded-xl p-6 hover:border-cyan-500/50"
+                >
+                  <div className={`absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br ${tool.gradient} opacity-10 blur-2xl group-hover:opacity-20 transition-opacity`}></div>
+
+                  <div className="relative z-10">
+                    <div className={`inline-flex rounded-lg bg-gradient-to-br ${tool.gradient} p-3 text-white shadow-lg mb-4`}>
+                      {tool.icon}
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {tool.name}
+                    </h3>
+
+                    <p className="text-sm text-slate-400 mb-4">
+                      {tool.description}
+                    </p>
+
+                    <div className="flex items-center text-sm font-bold text-cyan-400 group-hover:translate-x-1 transition-transform">
+                      INITIATE
+                      <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
