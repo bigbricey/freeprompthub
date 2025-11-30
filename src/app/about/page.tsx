@@ -57,7 +57,7 @@ export default function AboutPage() {
                                 THE TEAM
                             </h2>
                             <p className="text-slate-300 leading-relaxed">
-                                FreePromptHub is curated by a small team of AI enthusiasts and prompt engineers.
+                                FreePromptHub is maintained by a dedicated team of AI engineers.
                                 We constantly test and refine our prompts to ensure they deliver the best results.
                                 Have a suggestion? We'd love to hear from you.
                             </p>

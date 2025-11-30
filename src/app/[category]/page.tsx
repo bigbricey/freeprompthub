@@ -95,7 +95,7 @@ export default async function CategoryPage({ params }: Props) {
                                 {categoryName} Prompts
                             </h1>
                             <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-                                Curated collection of the best AI prompts for {categoryName}.
+                                Battle-tested collection of the best AI prompts for {categoryName}.
                                 Copy, paste, and get results instantly.
                             </p>
 

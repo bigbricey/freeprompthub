@@ -73,18 +73,18 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               <li>
                 <Link
-                  href="/business"
+                  href="/business-startups"
                   className="text-sm text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
                 >
-                  Business Prompts
+                  Business & Startups
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/writing"
+                  href="/copywriting"
                   className="text-sm text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
                 >
-                  Writing Prompts
+                  Copywriting Prompts
                 </Link>
               </li>
               <li>
