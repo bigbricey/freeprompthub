@@ -29,7 +29,7 @@ export default function Header() {
               GENERATOR
             </Link>
             <Link
-              href="/#about"
+              href="/about"
               className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors tracking-wide"
             >
               ABOUT

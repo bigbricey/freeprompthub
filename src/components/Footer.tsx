@@ -148,10 +148,16 @@ export default function Footer() {
                 Privacy
               </Link>
               <Link
-                href="/#about"
+                href="/about"
                 className="text-sm text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
               >
                 About
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+              >
+                Contact
               </Link>
             </div>
           </div>
