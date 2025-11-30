@@ -182,11 +182,8 @@ export default function Home() {
                     </p>
 
                     <div className="flex items-center justify-between border-t border-white/5 pt-4">
-                      <span className="text-xs font-mono text-cyan-500">
-                        ID: {category.slug.toUpperCase()}
-                      </span>
                       <div className="flex items-center text-xs font-bold text-purple-400 group-hover:translate-x-1 transition-transform">
-                        ACCESS DATA
+                        VIEW PROMPTS
                         <svg className="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>

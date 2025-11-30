@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Prompt } from "@/data/prompts";
-import { createClient } from "@/lib/supabase";
 
 interface PromptCardProps {
   prompt: Prompt;
@@ -111,40 +110,15 @@ export default function PromptCard({ prompt }: PromptCardProps) {
             {expanded ? "Show less" : "Show full prompt"}
           </button>
 
-          {/* Save Button (New) */}
-          <button
-            onClick={async () => {
-              const { data: { user } } = await createClient().auth.getUser();
-              if (!user) {
-                window.location.href = "/login";
-                return;
-              }
-
-              const supabase = createClient();
-              const { error } = await supabase
-                .from('saved_prompts')
-                .insert({
-                  user_id: user.id,
-                  prompt_id: prompt.id
-                });
-
-              if (error) {
-                if (error.code === '23505') { // Unique violation
-                  alert("You've already saved this prompt!");
-                } else {
-                  alert("Error saving prompt: " + error.message);
-                }
-              } else {
-                alert("Prompt saved to your dashboard!");
-              }
-            }}
-            className="p-2 text-slate-400 hover:text-pink-500 transition-colors"
-            title="Save Prompt"
+          {/* Affiliate Link (The Money Slot) */}
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:from-amber-400 hover:to-orange-500 transition-all"
           >
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </button>
+            <span>⚡ Recommended Tool</span>
+          </a>
         </div>
 
         <button
