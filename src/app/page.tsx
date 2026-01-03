@@ -93,6 +93,7 @@ export default function Home() {
         name: key.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
         slug: key,
         count: prompts[key].length,
+        featured: false,
         ...meta
       };
     }),
