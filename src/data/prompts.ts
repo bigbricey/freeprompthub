@@ -14,6 +14,7 @@ import saasPrompts from "./categories/saas.json";
 import consultingPrompts from "./categories/consulting.json";
 import healthcarePrompts from "./categories/healthcare.json";
 import contentcreationPrompts from "./categories/content-creation.json";
+import { blueprints } from "./blueprints";
 
 export interface Prompt {
   id: string;
@@ -41,6 +42,7 @@ export const prompts: Record<string, Prompt[]> = {
   consulting: consultingPrompts,
   healthcare: healthcarePrompts,
   "content-creation": contentcreationPrompts,
+  "agentic-blueprints": blueprints,
 };
 
 export function getPromptsByCategory(category: string): Prompt[] {

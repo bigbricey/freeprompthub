@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About FreePromptHub | Our Mission",
-    description: "Learn about FreePromptHub's mission to democratize AI. We provide high-quality, open-source prompts for ChatGPT, Claude, and Midjourney completely free.",
+    title: "About AgenticBlueprint | The Logic Factory",
+    description: "Learn about the mission to architect high-performance AI agent logic. We provide verified blueprints for the autonomous era.",
 };
 
 export default function AboutPage() {
@@ -17,10 +17,10 @@ export default function AboutPage() {
                     {/* Hero */}
                     <div className="text-center mb-16">
                         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl drop-shadow-[0_0_25px_rgba(168,85,247,0.5)] mb-6">
-                            ABOUT <span className="text-gradient-cosmic">FREEPROMPTHUB</span>
+                            ABOUT <span className="text-gradient-cosmic">AGENTICBLUEPRINT</span>
                         </h1>
                         <p className="text-xl text-slate-300">
-                            Democratizing Artificial Intelligence for everyone.
+                            Architecting verified logic for the autonomous 2026 era.
                         </p>
                     </div>
 
@@ -29,25 +29,26 @@ export default function AboutPage() {
                         <div className="holo-card rounded-2xl p-8">
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="w-1 h-8 bg-cyan-500 rounded-full"></span>
-                                OUR MISSION
+                                OUR VISION
                             </h2>
                             <p className="text-slate-300 leading-relaxed">
-                                We believe that the power of AI should be accessible to everyone, not just tech experts.
-                                FreePromptHub was built to be the ultimate open-source repository for high-quality AI prompts.
-                                Whether you are a developer, a marketer, or a creative artist, our goal is to provide you with
-                                the "cheat codes" you need to unlock the full potential of tools like ChatGPT, Claude, and Midjourney.
+                                In 2026, AI is no longer just a chatbot; it is a workforce.
+                                AgenticBlueprint Hub was founded to provide the verified logic chains—the "blueprints"—that drive autonomous agents.
+                                We focus on verification, performance, and reliability, ensuring that every premium module in our vault
+                                is ready for production environments.
                             </p>
                         </div>
 
                         <div className="holo-card rounded-2xl p-8">
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                                 <span className="w-1 h-8 bg-purple-500 rounded-full"></span>
-                                WHY FREE?
+                                HYBRID DATA MODEL
                             </h2>
                             <p className="text-slate-300 leading-relaxed">
-                                Most "prompt marketplaces" charge you for basic text. We think that's wrong.
-                                Innovation shouldn't be paywalled. We monetize through partnerships with premium tool providers
-                                (like the ones listed on our homepage) so that we can keep the core prompt library 100% free for you.
+                                We maintain a massive directory of free prompts to support the community.
+                                However, for high-stakes enterprise workflows, we offer premium Verified Blueprints.
+                                These high-ticket assets undergo rigorous auditing to ensure they handle hallucination,
+                                tool-calling, and edge cases with 99%+ reliability.
                             </p>
                         </div>
 

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { prompts } from "@/data/prompts";
+import { blueprints } from "@/data/blueprints";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -34,6 +35,11 @@ function getCategoryMeta(category: string) {
       icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>,
       gradient: "from-pink-500 to-rose-600",
       description: "Write better copy, faster"
+    },
+    "agentic-blueprints": {
+      icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>,
+      gradient: "from-indigo-600 to-purple-700",
+      description: "High-ticket autonomous logic chains."
     },
     // Default fallback
     default: {
@@ -80,15 +86,24 @@ export default function Home() {
     }
   };
 
-  const categoriesList = Object.keys(prompts).map(key => {
-    const meta = getCategoryMeta(key);
-    return {
-      name: key.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-      slug: key,
-      count: prompts[key].length,
-      ...meta
-    };
-  });
+  const categoriesList = [
+    ...Object.keys(prompts).map(key => {
+      const meta = getCategoryMeta(key);
+      return {
+        name: key.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+        slug: key,
+        count: prompts[key].length,
+        ...meta
+      };
+    }),
+    {
+      name: "Agentic Blueprints",
+      slug: "agentic-blueprints",
+      count: blueprints.length,
+      ...getCategoryMeta("agentic-blueprints"),
+      featured: true
+    }
+  ];
 
   return (
     <div className="min-h-screen relative">
@@ -104,17 +119,17 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
               </span>
-              System Online: {Object.values(prompts).flat().length} Modules Active
+              System Online: {Object.values(prompts).flat().length + blueprints.length} Modules Active
             </div>
 
             <h1 className="text-6xl font-bold tracking-tight text-white sm:text-8xl mb-6 drop-shadow-[0_0_35px_rgba(168,85,247,0.5)]">
-              EXPLORE THE <br />
-              <span className="text-gradient-cosmic">PROMPT UNIVERSE</span>
+              AGENTIC <br />
+              <span className="text-gradient-cosmic">BLUEPRINT HUB</span>
             </h1>
 
             <p className="mx-auto max-w-2xl text-xl text-slate-300 mb-12 leading-relaxed">
-              Navigate through a galaxy of high-performance AI prompts. <br />
-              Your command center for Business, Coding, and Creative Intelligence.
+              The premier source for high-performance AI agent logic. <br />
+              Verified blueprints for Business, Coding, and Autonomous Workflows.
             </p>
 
             {/* Search Bar */}
@@ -164,8 +179,13 @@ export default function Home() {
                 <Link
                   key={category.slug}
                   href={`/${category.slug}`}
-                  className="holo-card group relative overflow-hidden rounded-xl p-6"
+                  className={`group relative p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] overflow-hidden ${category.featured ? 'ring-2 ring-indigo-500/50' : ''}`}
                 >
+                  {category.featured && (
+                    <div className="absolute top-0 right-0 bg-indigo-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg tracking-widest uppercase">
+                      Verification Protocol Active
+                    </div>
+                  )}
                   <div className={`absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-gradient-to-br ${category.gradient} opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-500`}></div>
 
                   <div className="relative z-10">

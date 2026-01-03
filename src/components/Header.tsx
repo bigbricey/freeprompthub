@@ -11,7 +11,7 @@ export default function Header() {
               <div className="absolute inset-0 bg-cyan-500/20 rounded-lg blur-sm"></div>
             </div>
             <span className="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
-              FreePromptHub
+              AgenticBlueprint
             </span>
           </Link>
 

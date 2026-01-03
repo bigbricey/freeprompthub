@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PromptCard from "@/components/PromptCard";
+import BlueprintCard from "@/components/BlueprintCard";
 import { getPromptsByCategory, prompts } from "@/data/prompts";
+import { blueprints, Blueprint } from "@/data/blueprints";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -25,9 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const categoryName = category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     return {
-        title: `${categoryName} AI Prompts | FreePromptHub`,
-        description: `Discover high-quality AI prompts for ${categoryName}. Boost productivity and automate tasks with our curated collection.`,
-        keywords: [`${category} prompts`, "AI prompts", "productivity", "automation"],
+        title: `${categoryName} | AgenticBlueprint Hub`,
+        description: `Verified ${categoryName} blueprints and logic for high-performance AI agents.`,
+        keywords: [`${category} blueprints`, "agentic logic", "AI agent marketplace", "autonomous workflows"],
     };
 }
 
@@ -82,28 +84,34 @@ export default async function CategoryPage({ params }: Props) {
             <Header />
             <main>
                 {/* Hero */}
-                <section className="bg-gradient-to-b from-indigo-50 to-white py-16 dark:from-slate-900 dark:to-slate-900">
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <section className={`${category === 'agentic-blueprints' ? 'bg-[#0a0a0b] py-24 relative overflow-hidden' : 'bg-gradient-to-b from-indigo-50 to-white py-16 dark:from-slate-900 dark:to-slate-900'}`}>
+                    {category === 'agentic-blueprints' && (
+                        <>
+                            <div className="absolute inset-0 bg-[url('/stars.svg')] opacity-30"></div>
+                            <div className="absolute top-0 right-0 -mt-20 -mr-20 h-96 w-96 rounded-full bg-indigo-600 opacity-20 blur-[120px]"></div>
+                        </>
+                    )}
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                         <div className="mx-auto max-w-3xl text-center">
-                            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-indigo-100 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">
+                            <div className={`mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium ${category === 'agentic-blueprints'
+                                ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
+                                : 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300'
+                                }`}>
                                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                                 </svg>
-                                {categoryPrompts.length} Prompts
+                                {category === "agentic-blueprints" ? blueprints.length : categoryPrompts.length} Verified Modules
                             </div>
-                            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl dark:text-white">
-                                {categoryName} Prompts
+                            <h1 className={`text-4xl font-bold tracking-tight sm:text-6xl ${category === 'agentic-blueprints' ? 'text-white' : 'text-slate-900 dark:text-white'
+                                }`}>
+                                {categoryName} {category === 'agentic-blueprints' ? '' : 'Prompts'}
                             </h1>
-                            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-                                Battle-tested collection of the best AI prompts for {categoryName}.
-                                Copy, paste, and get results instantly.
+                            <p className={`mt-4 text-xl ${category === 'agentic-blueprints' ? 'text-indigo-200/70' : 'text-slate-600 dark:text-slate-400'
+                                }`}>
+                                {category === 'agentic-blueprints'
+                                    ? "Enterprise-grade autonomous logic chains for the 2026 Agentic Era."
+                                    : `Battle-tested collection of the best AI prompts for ${categoryName}.`}
                             </p>
-
-                            {/* SEO Content Slot (Hidden by default until text provided) */}
-                            <div id="seo-content" className="mt-8 text-left prose prose-slate dark:prose-invert max-w-none hidden">
-                                {/* Placeholder for future SEO text */}
-                                <p>Detailed guide on how to use {categoryName} prompts effectively...</p>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -148,10 +156,16 @@ export default async function CategoryPage({ params }: Props) {
                 {/* Prompts Grid */}
                 <section className="py-16">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <div className="grid gap-6 md:grid-cols-2">
-                            {categoryPrompts.map((prompt) => (
-                                <PromptCard key={prompt.id} prompt={prompt} />
-                            ))}
+                        <div className="grid gap-8 md:grid-cols-2">
+                            {category === "agentic-blueprints" ? (
+                                blueprints.map((blueprint) => (
+                                    <BlueprintCard key={blueprint.id} blueprint={blueprint} />
+                                ))
+                            ) : (
+                                categoryPrompts.map((prompt) => (
+                                    <PromptCard key={prompt.id} prompt={prompt} />
+                                ))
+                            )}
                         </div>
                     </div>
                 </section>

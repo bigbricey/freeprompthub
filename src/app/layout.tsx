@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "FreePromptHub - Free AI Prompts Directory",
-  description: "Discover and share the best AI prompts for ChatGPT, Claude, Midjourney, and more. Free prompt templates to boost your productivity.",
-  keywords: ["AI prompts", "ChatGPT prompts", "Claude prompts", "Midjourney prompts", "free prompts", "prompt templates"],
+  title: "AgenticBlueprint Hub | Verified AI Agent Logic",
+  description: "Architecting the future of autonomous intelligence. Get verified agentic blueprints and high-performance system prompts for AI agents.",
+  keywords: ["Agentic Blueprints", "AI Agent Marketplace", "System Prompts", "Autonomous Logic", "B2B AI Solutions"],
   openGraph: {
-    title: "FreePromptHub - Free AI Prompts Directory",
-    description: "Discover and share the best AI prompts for ChatGPT, Claude, Midjourney, and more.",
-    url: "https://freepromphub.com",
-    siteName: "FreePromptHub",
+    title: "AgenticBlueprint Hub | Verified AI Agent Logic",
+    description: "Architecting the future of autonomous intelligence with verified agentic blueprints.",
+    url: "https://agenticblueprint.com",
+    siteName: "AgenticBlueprint",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FreePromptHub - Free AI Prompts Directory",
-    description: "Discover and share the best AI prompts for ChatGPT, Claude, Midjourney, and more.",
+    title: "AgenticBlueprint Hub | Verified AI Agent Logic",
+    description: "Architecting the future of autonomous intelligence with verified agentic blueprints.",
   },
 };
 

@@ -24,11 +24,11 @@ export default function Footer() {
                 </svg>
               </div>
               <span className="text-xl font-bold text-slate-900 dark:text-white">
-                FreePromptHub
+                AgenticBlueprint
               </span>
             </Link>
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
-              Your free resource for discovering and sharing the best AI prompts.
+              Architecting the future of autonomous intelligence with verified agentic blueprints.
             </p>
           </div>
 
@@ -138,7 +138,7 @@ export default function Footer() {
         <div className="mt-8 border-t border-slate-200 pt-8 dark:border-slate-800">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              &copy; {new Date().getFullYear()} FreePromptHub. All rights reserved.
+              &copy; {new Date().getFullYear()} AgenticBlueprint. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link

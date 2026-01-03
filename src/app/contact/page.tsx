@@ -27,22 +27,23 @@ export default function ContactPage() {
                             </div>
 
                             <h2 className="text-2xl font-bold text-white mb-4">
-                                Email Support
+                                B2B Agentic Logic Audits
                             </h2>
                             <p className="text-slate-300 mb-8">
-                                Have a question about a prompt? Want to suggest a new category?
-                                Or just want to say hello? We are standing by.
+                                Need a specialized logic chain for your enterprise AI agents?
+                                We provide security audits, performance optimization, and custom blueprint development.
                             </p>
 
                             <a
-                                href="mailto:support@freeprompthub.com"
-                                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 px-8 py-4 text-lg font-bold text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 hover:scale-[1.02]"
+                                href="mailto:consult@freeprompthub.com"
+                                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-600 px-8 py-4 text-lg font-bold text-white shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] transition-all duration-300 hover:scale-[1.02]"
                             >
-                                support@freeprompthub.com
+                                consult@freeprompthub.com
                             </a>
 
                             <p className="mt-8 text-sm text-slate-500">
-                // Average response time: 24 hours
+                                // Direct pipeline for enterprise inquiries <br />
+                                // Average logic audit retainer: $2k - $5k / mo
                             </p>
                         </div>
                     </div>
