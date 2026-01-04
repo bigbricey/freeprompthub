@@ -5,69 +5,111 @@ import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PromptCard from "@/components/PromptCard";
-import { getAllPrompts, Prompt } from "@/data/prompts";
+import BlueprintCard from "@/components/BlueprintCard";
+
+import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase";
 
 function SearchResults() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
+  const [results, setResults] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const allPrompts = getAllPrompts();
+  useEffect(() => {
+    async function performSearch() {
+      if (!query) {
+        setResults([]);
+        return;
+      }
 
-  const filteredPrompts: Prompt[] = query
-    ? allPrompts.filter(
-        (prompt) =>
-          prompt.title.toLowerCase().includes(query.toLowerCase()) ||
-          prompt.description.toLowerCase().includes(query.toLowerCase())
-      )
-    : [];
+      setLoading(true);
+      setError(null);
+
+      try {
+        // 1. Generate embedding for the search query
+        const embedRes = await fetch("/api/embed", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: query }),
+        });
+
+        if (!embedRes.ok) throw new Error("Failed to generate search embedding");
+        const { embedding } = await embedRes.json();
+
+        // 2. Call Supabase match_prompts function
+        const supabase = createClient();
+        const { data, error: searchError } = await supabase.rpc("match_prompts", {
+          query_embedding: embedding,
+          match_threshold: 0.3, // Adjusted for broader semantic matches
+          match_count: 20,
+        });
+
+        if (searchError) throw searchError;
+        setResults(data || []);
+      } catch (err: any) {
+        console.error("Search error:", err);
+        setError("AI-Powered search is currently adjusting. Please try again in 5 seconds.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    performSearch();
+  }, [query]);
 
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-slate-50 to-white py-12 dark:from-slate-900 dark:to-slate-900">
+      <section className="relative pt-16 pb-20 text-center">
+        <div className="stars-bg absolute inset-0 -z-10"></div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
-              Search Results
-            </h1>
-            {query && (
-              <p className="mt-3 text-lg text-slate-600 dark:text-slate-400">
-                {filteredPrompts.length} result{filteredPrompts.length !== 1 ? "s" : ""} for &quot;{query}&quot;
-              </p>
-            )}
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/5 bg-white/5 px-4 py-1.5 text-sm font-medium text-amber-500/80 mb-8 backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+            </span>
+            Neural Search Sequence Active
           </div>
+          <h1 className="text-4xl font-black tracking-tighter text-white sm:text-6xl mb-6">
+            SEARCH <span className="text-gradient-cosmic">RESULTS</span>
+          </h1>
+          {query && !loading && (
+            <p className="mx-auto max-w-2xl text-lg text-slate-300">
+              Discovered {results.length} relevant module{results.length !== 1 ? "s" : ""} for &quot;{query}&quot;
+            </p>
+          )}
         </div>
       </section>
 
       {/* Results */}
-      <section className="py-12">
+      <section className="py-20 relative z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {!query ? (
-            <div className="text-center py-16">
-              <svg
-                className="mx-auto h-12 w-12 text-slate-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <h2 className="mt-4 text-lg font-medium text-slate-900 dark:text-white">
-                Enter a search term
-              </h2>
-              <p className="mt-2 text-slate-600 dark:text-slate-400">
-                Type something in the search box to find prompts.
+          {loading ? (
+            <div className="text-center py-20 flex flex-col items-center justify-center">
+              <div className="w-16 h-16 border-4 border-amber-500/20 border-t-amber-500 rounded-full animate-spin mb-6"></div>
+              <p className="text-amber-500/60 font-mono text-sm animate-pulse tracking-widest">
+                // SCANNING LOGIC REPOSITORY...
               </p>
             </div>
-          ) : filteredPrompts.length === 0 ? (
+          ) : error ? (
+            <div className="text-center py-16 bg-red-900/10 border border-red-500/20 rounded-2xl p-8 backdrop-blur-md">
+              <svg className="mx-auto h-12 w-12 text-red-500/50 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <h2 className="text-xl font-bold text-white mb-2">Interface Disruption</h2>
+              <p className="text-slate-400">{error}</p>
+            </div>
+          ) : !query ? (
             <div className="text-center py-16">
+              <h2 className="text-xl font-bold text-white mb-2">Initiate Command</h2>
+              <p className="text-slate-400">Specify search parameters in the console above.</p>
+            </div>
+          ) : results.length === 0 ? (
+            <div className="text-center py-16 bg-[#121214]/50 border border-white/5 rounded-2xl p-8 backdrop-blur-md">
               <svg
-                className="mx-auto h-12 w-12 text-slate-400"
+                className="mx-auto h-12 w-12 text-slate-600 mb-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -79,17 +121,17 @@ function SearchResults() {
                   d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <h2 className="mt-4 text-lg font-medium text-slate-900 dark:text-white">
-                No prompts found for &quot;{query}&quot;
-              </h2>
-              <p className="mt-2 text-slate-600 dark:text-slate-400">
-                Try a different search term or browse our categories.
-              </p>
+              <h2 className="text-xl font-bold text-white mb-2">No Matches Found</h2>
+              <p className="text-slate-400">The current query does not align with any known logic modules.</p>
             </div>
           ) : (
-            <div className="grid gap-6 md:grid-cols-2">
-              {filteredPrompts.map((prompt) => (
-                <PromptCard key={prompt.id} prompt={prompt} />
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {results.map((prompt) => (
+                prompt.type === 'blueprint' ? (
+                  <BlueprintCard key={prompt.id} blueprint={prompt} />
+                ) : (
+                  <PromptCard key={prompt.id} prompt={prompt} />
+                )
               ))}
             </div>
           )}
@@ -101,7 +143,7 @@ function SearchResults() {
 
 export default function SearchPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900">
+    <div className="min-h-screen bg-[#09090b]">
       <Header />
       <main>
         <Suspense

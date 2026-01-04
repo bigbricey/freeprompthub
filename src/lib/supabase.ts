@@ -1,8 +1,33 @@
-import { createBrowserClient } from '@supabase/ssr'
+import { createBrowserClient, createServerClient as createSupabaseServerClient } from '@supabase/ssr'
+import { createClient as createSupabaseClient } from '@supabase/supabase-js'
+import { cookies } from 'next/headers'
 
 export function createClient() {
     return createBrowserClient(
-        "https://msybnwkwmreukxemijfy.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1zeWJud2t3bXJldWt4ZW1pamZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1MzA5MzgsImV4cCI6MjA4MDEwNjkzOH0.Jje7-ttygOXIEoltCid5FBFaEeyuRg2D-Hkhrm51NAg"
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+}
+
+export async function createServerClient() {
+    const cookieStore = await cookies()
+
+    return createSupabaseServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+            cookies: {
+                get(name: string) {
+                    return cookieStore.get(name)?.value
+                },
+            },
+        }
+    )
+}
+
+export function createAdminClient() {
+    return createSupabaseClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!
     )
 }

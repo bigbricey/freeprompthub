@@ -9,18 +9,18 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900">
+    <div className="min-h-screen bg-[#09090b]">
       <Header />
-      <main className="py-16">
+      <main className="py-16 relative z-10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Privacy Policy
+          <h1 className="text-4xl font-black tracking-tighter text-white">
+            PRIVACY <span className="text-gradient-cosmic">PROTOCOL</span>
           </h1>
-          <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
-            Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+          <p className="mt-4 text-xs font-bold text-amber-500/60 tracking-widest uppercase">
+            // RECORD UPDATED: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
           </p>
 
-          <div className="prose prose-slate mt-8 max-w-none dark:prose-invert">
+          <div className="prose prose-slate mt-8 max-w-none prose-invert prose-headings:text-white prose-p:text-slate-300 prose-li:text-slate-300 prose-strong:text-amber-500">
             <h2>1. Introduction</h2>
             <p>
               Welcome to FreePromptHub (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting

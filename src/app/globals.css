@@ -6,21 +6,21 @@
 }
 
 :root {
-  /* Deep Space Palette */
-  --background: #030014;
-  /* Void Black */
-  --foreground: #e2e8f0;
-  /* Starlight White */
+  /* Institutional Premium Palette */
+  --background: #09090b;
+  /* Deep Obsidian */
+  --foreground: #f4f4f5;
+  /* Soft Zinc */
 
-  --primary: #a855f7;
-  /* Nebula Purple */
-  --secondary: #06b6d4;
-  /* Cyan */
-  --accent: #f472b6;
-  /* Pink Plasma */
+  --primary: #fbbf24;
+  /* Premium Amber - Signals ROI/Value */
+  --secondary: #10b981;
+  /* Verified Emerald - Signals Safety/Growth */
+  --accent: #52525b;
+  /* Muted Zinc - The "Human" element */
 
-  --card-bg: rgba(13, 12, 34, 0.6);
-  --card-border: rgba(168, 85, 247, 0.2);
+  --card-bg: rgba(18, 18, 20, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -30,7 +30,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Starfield Background */
+/* Architectural Background */
 .stars-bg {
   position: fixed;
   top: 0;
@@ -38,9 +38,10 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 40%);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(251, 191, 36, 0.03) 0, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(16, 185, 129, 0.02) 0, transparent 50%);
 }
 
 .stars-bg::before {
@@ -50,13 +51,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 3px),
-    radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 2px),
-    radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 3px);
-  background-size: 550px 550px, 350px 350px, 250px 250px;
-  background-position: 0 0, 40px 60px, 130px 270px;
-  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
 }
 
 /* Holographic Card */
@@ -69,12 +66,12 @@ body {
 }
 
 .holo-card:hover {
-  transform: translateY(-4px) scale(1.01);
-  border-color: rgba(6, 182, 212, 0.5);
-  /* Cyan glow */
+  transform: translateY(-4px);
+  border-color: rgba(251, 191, 36, 0.3);
+  /* Amber/Gold glow */
   box-shadow:
-    0 0 30px rgba(6, 182, 212, 0.15),
-    inset 0 0 20px rgba(6, 182, 212, 0.05);
+    0 20px 40px -20px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(251, 191, 36, 0.05);
 }
 
 /* Neon Text Gradients */
@@ -82,9 +79,8 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #c084fc, #22d3ee);
-  /* Purple to Cyan */
-  text-shadow: 0 0 30px rgba(192, 132, 252, 0.3);
+  background-image: linear-gradient(to right, #fbbf24, #fcd34d);
+  /* Amber to Gold */
 }
 
 .text-gradient-plasma {

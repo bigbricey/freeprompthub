@@ -1,26 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getRandomPrompt, Prompt } from "@/data/prompts";
+import { createClient } from "@/lib/supabase";
 
-const purposes = [
-  { value: "business", label: "Business & Money-Making" },
-  { value: "writing", label: "Writing & Content" },
-  { value: "coding", label: "Coding & Development" },
-  { value: "creative", label: "Creative & Design" },
-  { value: "real-estate", label: "Real Estate" },
-  { value: "legal", label: "Legal & Contracts" },
-  { value: "marketing", label: "Marketing & Ads" },
-  { value: "sales", label: "Sales & Negotiation" },
-  { value: "finance", label: "Finance & Investing" },
-  { value: "hr", label: "HR & Recruiting" },
-  { value: "saas", label: "SaaS & Product" },
-  { value: "consulting", label: "Consulting" },
-  { value: "healthcare", label: "Healthcare" },
-  { value: "content-creation", label: "Content Creation" },
-];
+interface Prompt {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  category_id: string;
+}
 
 const aiTools = [
   { value: "chatgpt", label: "ChatGPT" },
@@ -29,38 +20,76 @@ const aiTools = [
 ];
 
 export default function PromptGeneratorPage() {
+  const [purposes, setPurposes] = useState<{ value: string; label: string }[]>([]);
   const [purpose, setPurpose] = useState("");
   const [aiTool, setAiTool] = useState("");
-  const [generatedPrompt, setGeneratedPrompt] = useState<Prompt | null>(null);
+  const [generatedPrompt, setGeneratedPrompt] = useState<any | null>(null);
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleGenerate = () => {
-    // Map purpose to category logic
-    let category = aiTool;
+  useEffect(() => {
+    async function fetchCategories() {
+      const supabase = createClient();
+      const { data } = await supabase.from("categories").select("slug, name");
+      if (data) {
+        setPurposes(data.map(c => ({ value: c.slug, label: c.name })));
+      }
+    }
+    fetchCategories();
+  }, []);
 
-    // If a specific niche is selected, try to pull from that niche first
-    if (purpose && purpose !== "creative" && purpose !== "writing" && purpose !== "coding" && purpose !== "business") {
-      // For specific niches like real-estate, legal, etc.
-      category = purpose;
-    } else if (purpose === "creative" && aiTool === "midjourney") {
-      category = "midjourney";
-    } else if (purpose === "creative") {
-      category = "midjourney"; // Default to midjourney for creative if no tool selected or text tool
+  const handleGenerate = async () => {
+    setLoading(true);
+    const supabase = createClient();
+
+    // Choose category: prefer specific purpose, fallback to tool
+    const categorySlug = purpose || aiTool;
+
+    if (!categorySlug) {
+      setLoading(false);
+      return;
     }
 
-    // Fallback logic if category is still just a tool name but we want niche content
-    // Actually, getRandomPrompt handles (category, subcategory)
-    // We can pass the purpose as the category if it matches a file name
+    try {
+      // 1. Get category ID
+      const { data: catData } = await supabase
+        .from("categories")
+        .select("id")
+        .eq("slug", categorySlug)
+        .single();
 
-    const prompt = getRandomPrompt(category || undefined, purpose || undefined);
-    setGeneratedPrompt(prompt);
-    setCopied(false);
+      if (!catData) throw new Error("Category not found");
+
+      // 2. Fetch all prompts for this category and pick a random one
+      // (For now, just fetch all IDs and pick one to save bandwidth, then fetch the full one)
+      const { data: prompts } = await supabase
+        .from("prompts")
+        .select("id")
+        .eq("category_id", catData.id);
+
+      if (!prompts || prompts.length === 0) throw new Error("No prompts found");
+
+      const randomPromptId = prompts[Math.floor(Math.random() * prompts.length)].id;
+
+      const { data: fullPrompt } = await supabase
+        .from("prompts")
+        .select("*")
+        .eq("id", randomPromptId)
+        .single();
+
+      setGeneratedPrompt(fullPrompt);
+    } catch (err) {
+      console.error("Generation error:", err);
+    } finally {
+      setLoading(false);
+      setCopied(false);
+    }
   };
 
   const copyToClipboard = async () => {
     if (!generatedPrompt) return;
     try {
-      await navigator.clipboard.writeText(generatedPrompt.prompt);
+      await navigator.clipboard.writeText(generatedPrompt.content);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -147,9 +176,10 @@ export default function PromptGeneratorPage() {
                 {/* Generate Button */}
                 <button
                   onClick={handleGenerate}
-                  className="w-full rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 px-6 py-4 text-lg font-bold text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 hover:scale-[1.02]"
+                  disabled={loading}
+                  className="w-full rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 px-6 py-4 text-lg font-bold text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
                 >
-                  INITIALIZE GENERATION
+                  {loading ? "SCANNING REPOSITORY..." : "INITIALIZE GENERATION"}
                 </button>
               </div>
 

@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AgenticBlueprint Hub | Verified AI Agent Logic",
-  description: "Architecting the future of autonomous intelligence. Get verified agentic blueprints and high-performance system prompts for AI agents.",
-  keywords: ["Agentic Blueprints", "AI Agent Marketplace", "System Prompts", "Autonomous Logic", "B2B AI Solutions"],
+  title: "FreePromptHub | Premium AI Agent Blueprints & Prompts",
+  description: "The world's premier destination for high-performance AI prompts and verified agentic blueprints. Architecting the future of autonomous intelligence.",
+  keywords: ["FreePromptHub", "Agentic Blueprints", "AI Agent Marketplace", "System Prompts", "Autonomous Logic"],
   openGraph: {
-    title: "AgenticBlueprint Hub | Verified AI Agent Logic",
-    description: "Architecting the future of autonomous intelligence with verified agentic blueprints.",
-    url: "https://agenticblueprint.com",
-    siteName: "AgenticBlueprint",
+    title: "FreePromptHub | Premium AI Agent Blueprints",
+    description: "The premier hub for high-performance AI prompts and verified agentic blueprints.",
+    url: "https://freeprompthub.com",
+    siteName: "FreePromptHub",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AgenticBlueprint Hub | Verified AI Agent Logic",
-    description: "Architecting the future of autonomous intelligence with verified agentic blueprints.",
+    title: "FreePromptHub | Premium AI Agent Blueprints",
+    description: "The premier hub for high-performance AI prompts and verified agentic blueprints.",
   },
 };
 
