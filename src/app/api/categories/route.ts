@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase";
+import { createAdminClient } from "@/lib/supabase-server";
 
 export async function GET() {
     try {
-        const supabase = createClient();
+        const supabase = createAdminClient();
 
         // Fetch categories
         const { data: categories, error: catError } = await supabase

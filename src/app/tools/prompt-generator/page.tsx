@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { createClient } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase-client";
 
 interface Prompt {
   id: string;

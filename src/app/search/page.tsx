@@ -8,7 +8,7 @@ import PromptCard from "@/components/PromptCard";
 import BlueprintCard from "@/components/BlueprintCard";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase-client";
 
 function SearchResults() {
   const searchParams = useSearchParams();

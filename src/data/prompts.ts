@@ -20,9 +20,12 @@ export interface Prompt {
   id: string;
   title: string;
   description: string;
-  prompt: string;
-  category: string;
+  prompt?: string;
+  content?: string;
+  category?: string;
+  category_id?: string;
   tags: string[];
+  type?: string;
 }
 
 export const prompts: Record<string, Prompt[]> = {

@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PromptCard from "@/components/PromptCard";
 import BlueprintCard from "@/components/BlueprintCard";
-import { createAdminClient } from "@/lib/supabase";
+import { createAdminClient } from "@/lib/supabase-server";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -100,8 +100,8 @@ export default async function CategoryPage({ params }: Props) {
             <Header />
             <main>
                 {/* Hero */}
-                <section className={`${category === 'agentic-blueprints' ? 'bg-[#0a0a0b] py-24 relative overflow-hidden' : 'bg-[#121214] border-b border-white/5 py-16'} `}>
-                    {category === 'agentic-blueprints' && (
+                <section className={`${slug === 'agentic-blueprints' ? 'bg-[#0a0a0b] py-24 relative overflow-hidden' : 'bg-[#121214] border-b border-white/5 py-16'} `}>
+                    {slug === 'agentic-blueprints' && (
                         <>
                             <div className="absolute inset-0 bg-transparent opacity-30"></div>
                             <div className="absolute top-0 right-0 -mt-20 -mr-20 h-96 w-96 rounded-full bg-amber-600 opacity-5 blur-[120px]"></div>
@@ -110,8 +110,8 @@ export default async function CategoryPage({ params }: Props) {
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                         <div className="mx-auto max-w-3xl text-center">
                             <div className={`mb - 4 inline - flex items - center gap - 2 rounded - full px - 4 py - 1.5 text - sm font - medium ${categoryData.slug === 'agentic-blueprints'
-                                    ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
-                                    : 'bg-white/5 text-amber-500/80 border border-white/10'
+                                ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
+                                : 'bg-white/5 text-amber-500/80 border border-white/10'
                                 } `}>
                                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
