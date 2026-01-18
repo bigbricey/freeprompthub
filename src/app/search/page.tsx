@@ -28,29 +28,19 @@ function SearchResults() {
       setError(null);
 
       try {
-        // 1. Generate embedding for the search query
-        const embedRes = await fetch("/api/embed", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: query }),
-        });
-
-        if (!embedRes.ok) throw new Error("Failed to generate search embedding");
-        const { embedding } = await embedRes.json();
-
-        // 2. Call Supabase match_prompts function
+        // Keyword-based search across multiple columns
         const supabase = createClient();
-        const { data, error: searchError } = await supabase.rpc("match_prompts", {
-          query_embedding: embedding,
-          match_threshold: 0.3, // Adjusted for broader semantic matches
-          match_count: 20,
-        });
+        const { data, error: searchError } = await supabase
+          .from("prompts")
+          .select("*")
+          .or(`title.ilike.%${query}%,description.ilike.%${query}%,content.ilike.%${query}%`)
+          .limit(24);
 
         if (searchError) throw searchError;
         setResults(data || []);
       } catch (err: any) {
         console.error("Search error:", err);
-        setError("AI-Powered search is currently adjusting. Please try again in 5 seconds.");
+        setError("Search protocol disruption. Please try a different query.");
       } finally {
         setLoading(false);
       }
@@ -70,7 +60,7 @@ function SearchResults() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
             </span>
-            Neural Search Sequence Active
+            Local Logic Search Active
           </div>
           <h1 className="text-4xl font-black tracking-tighter text-white sm:text-6xl mb-6">
             SEARCH <span className="text-gradient-cosmic">RESULTS</span>
