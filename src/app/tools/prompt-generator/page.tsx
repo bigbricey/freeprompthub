@@ -27,6 +27,8 @@ export default function PromptGeneratorPage() {
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
     async function fetchCategories() {
       const supabase = createClient();
@@ -40,46 +42,61 @@ export default function PromptGeneratorPage() {
 
   const handleGenerate = async () => {
     setLoading(true);
+    setError(null);
+    setGeneratedPrompt(null);
     const supabase = createClient();
 
     // Choose category: prefer specific purpose, fallback to tool
     const categorySlug = purpose || aiTool;
 
     if (!categorySlug) {
+      setError("Please select a Mission Objective or AI Model.");
       setLoading(false);
       return;
     }
 
     try {
       // 1. Get category ID
-      const { data: catData } = await supabase
+      const { data: catData, error: catError } = await supabase
         .from("categories")
         .select("id")
         .eq("slug", categorySlug)
         .single();
 
-      if (!catData) throw new Error("Category not found");
+      if (catError || !catData) {
+        throw new Error(`Category resolution failed: ${catError?.message || "Not found"}`);
+      }
 
       // 2. Fetch all prompts for this category and pick a random one
-      // (For now, just fetch all IDs and pick one to save bandwidth, then fetch the full one)
-      const { data: prompts } = await supabase
+      const { data: prompts, error: promptsError } = await supabase
         .from("prompts")
         .select("id")
         .eq("category_id", catData.id);
 
-      if (!prompts || prompts.length === 0) throw new Error("No prompts found");
+      if (promptsError) {
+        throw new Error(`Prompt retrieval failed: ${promptsError.message}`);
+      }
+
+      if (!prompts || prompts.length === 0) {
+        throw new Error("No localized patterns found for this mission parameter.");
+      }
 
       const randomPromptId = prompts[Math.floor(Math.random() * prompts.length)].id;
 
-      const { data: fullPrompt } = await supabase
+      const { data: fullPrompt, error: fullError } = await supabase
         .from("prompts")
         .select("*")
         .eq("id", randomPromptId)
         .single();
 
+      if (fullError || !fullPrompt) {
+        throw new Error(`Data infusion failed: ${fullError?.message || "Null payload"}`);
+      }
+
       setGeneratedPrompt(fullPrompt);
-    } catch (err) {
+    } catch (err: any) {
       console.error("Generation error:", err);
+      setError(err.message || "An unexpected neural link failure occurred.");
     } finally {
       setLoading(false);
       setCopied(false);
@@ -181,6 +198,20 @@ export default function PromptGeneratorPage() {
                 >
                   {loading ? "SCANNING REPOSITORY..." : "INITIALIZE GENERATION"}
                 </button>
+
+                {/* Error Display */}
+                {error && (
+                  <div className="mt-4 rounded-lg border border-red-500/30 bg-red-900/10 p-4 backdrop-blur-sm animate-in fade-in zoom-in-95 duration-300">
+                    <div className="flex items-center gap-3 text-red-400">
+                      <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                      <span className="text-sm font-bold tracking-tight uppercase tracking-wider">
+                        {error}
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Generated Prompt */}

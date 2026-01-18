@@ -114,6 +114,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/terms"
+                  className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/privacy"
                   className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
                 >
@@ -147,10 +155,10 @@ export default function Footer() {
                 Privacy
               </Link>
               <Link
-                href="/about"
+                href="/terms"
                 className="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-white transition-colors"
               >
-                About
+                Terms
               </Link>
               <Link
                 href="/contact"
