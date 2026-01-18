@@ -99,35 +99,27 @@ function getCategoryMeta(category: string) {
   return meta[category] || meta.default;
 }
 
-const recommendedTools = [
-  {
-    name: "Jasper Enterprise",
-    description: "The authoritative AI workspace for complex logic execution and global brand voice.",
-    href: "https://www.jasper.ai/", // Replace with affiliate link
-    icon: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-    gradient: "from-amber-500 to-orange-600",
-  },
-  {
-    name: "Surfer SEO",
-    description: "Forensic content optimization driven by neural network analysis and SERP data.",
-    href: "https://surferseo.com/", // Replace with affiliate link
-    icon: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
-    gradient: "from-emerald-500 to-teal-600",
-  },
-  {
-    name: "Perplexity Pro",
-    description: "The premier neural search engine for real-time institutional research and retrieval.",
-    href: "https://www.perplexity.ai/", // Replace with affiliate link
-    icon: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>,
-    gradient: "from-cyan-500 to-blue-600",
-  },
-];
+import { AFFILIATE_OFFERS } from "@/config/monetization";
+
+// High-grade icons for the slots
+const SlotIcons = {
+  slot1: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
+  slot2: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>,
+  slot3: <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>,
+};
 
 export default function Home() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [categoriesList, setCategoriesList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Map offers for the toolkit section
+  const offers = [
+    { ...AFFILIATE_OFFERS.slot1, icon: SlotIcons.slot1 },
+    { ...AFFILIATE_OFFERS.slot2, icon: SlotIcons.slot2 },
+    { ...AFFILIATE_OFFERS.slot3, icon: SlotIcons.slot3 },
+  ];
 
   useEffect(() => {
     async function fetchCategories() {
@@ -286,32 +278,39 @@ export default function Home() {
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {recommendedTools.map((tool) => (
+              {offers.map((offer) => (
                 <a
-                  key={tool.name}
-                  href={tool.href}
+                  key={offer.title}
+                  href={offer.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="holo-card group relative overflow-hidden rounded-xl p-6 hover:border-emerald-500/30"
                 >
-                  <div className={`absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br ${tool.gradient} opacity-5 blur-2xl group-hover:opacity-10 transition-opacity`}></div>
+                  <div className={`absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br ${offer.gradient} opacity-5 blur-2xl group-hover:opacity-10 transition-opacity`}></div>
+
+                  {/* Institutional Badge */}
+                  {offer.badge && (
+                    <div className="absolute top-3 right-3 px-2 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-black text-emerald-500 uppercase tracking-[0.2em] backdrop-blur-sm shadow-[0_0_10px_rgba(16,185,129,0.1)]">
+                      {offer.badge}
+                    </div>
+                  )}
 
                   <div className="relative z-10">
-                    <div className={`inline-flex rounded-lg bg-gradient-to-br ${tool.gradient} p-3 text-white shadow-lg mb-4 opacity-80 group-hover:opacity-100 transition-opacity`}>
-                      {tool.icon}
+                    <div className={`inline-flex rounded-lg bg-gradient-to-br ${offer.gradient} p-3 text-white shadow-lg mb-4 opacity-80 group-hover:opacity-100 transition-opacity`}>
+                      {offer.icon}
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {tool.name}
+                    <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-tight">
+                      {offer.title}
                     </h3>
 
-                    <p className="text-sm text-slate-400 mb-4">
-                      {tool.description}
+                    <p className="text-sm text-slate-400 mb-6 leading-relaxed">
+                      {offer.description}
                     </p>
 
-                    <div className="flex items-center text-sm font-bold text-emerald-500 group-hover:translate-x-1 transition-transform">
-                      ACCESS TOOL
-                      <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex items-center text-xs font-black text-emerald-500 group-hover:translate-x-1 transition-transform tracking-widest uppercase">
+                      INITIATE ACCESS
+                      <svg className="ml-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
