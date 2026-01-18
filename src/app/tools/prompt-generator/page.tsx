@@ -19,94 +19,70 @@ const aiTools = [
   { value: "midjourney", label: "Midjourney" },
 ];
 
+const GROVE_BLUEPRINTS: Record<string, { title: string; prompt: string }> = {
+  "Content Creation": {
+    title: "The Strategic Inflection Point Detector",
+    prompt: "Act as Andy Grove. Analyze the current [INDUSTRY/TOPIC]. Identify potential '10X forces' (competitors, technology, regulation) that could cause a Strategic Inflection Point. Advise on whether to pivot or persevere."
+  },
+  "Marketing": {
+    title: "The High Output 1:1 Agenda",
+    prompt: "Create a structured 1:1 meeting agenda for a subordinate with [LOW/HIGH] Task-Relevant Maturity. Focus on 'leading indicators' of trouble and mutual teaching, avoiding simple status updates."
+  },
+  "Business": {
+    title: "The Black Box Production Audit",
+    prompt: "Analyze the following business process as a 'Breakfast Factory'. Identify the 'Limiting Step' (the bottleneck) and define 3 'Black Box' metrics to monitor output quality without slowing down production."
+  },
+  "Coding": {
+    title: "The 10x Engineer's Leverage",
+    prompt: "Review the following code or architecture. Identify which activity provides the highest 'Managerial Leverage'—where a small input of effort will result in the highest output of value. Suggest refactoring for leverage."
+  }
+};
+
 export default function PromptGeneratorPage() {
-  const [purposes, setPurposes] = useState<{ value: string; label: string }[]>([]);
   const [purpose, setPurpose] = useState("");
   const [aiTool, setAiTool] = useState("");
-  const [generatedPrompt, setGeneratedPrompt] = useState<any | null>(null);
+  const [generatedPrompt, setGeneratedPrompt] = useState<{ title: string; prompt: string; description: string; category: string } | null>(null);
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function fetchCategories() {
-      const supabase = createClient();
-      const { data } = await supabase.from("categories").select("slug, name");
-      if (data) {
-        setPurposes(data.map(c => ({ value: c.slug, label: c.name })));
-      }
-    }
-    fetchCategories();
-  }, []);
-
-  const handleGenerate = async () => {
+  const handleGenerate = () => {
     setLoading(true);
     setError(null);
-    setGeneratedPrompt(null);
-    const supabase = createClient();
 
-    // Choose category: prefer specific purpose, fallback to tool
-    const categorySlug = purpose || aiTool;
+    // Virtual delay for "scanning" aesthetic
+    setTimeout(() => {
+      const selectedObjective = purpose;
 
-    if (!categorySlug) {
-      setError("Please select a Mission Objective or AI Model.");
-      setLoading(false);
-      return;
-    }
-
-    try {
-      // 1. Get category ID
-      const { data: catData, error: catError } = await supabase
-        .from("categories")
-        .select("id")
-        .eq("slug", categorySlug)
-        .single();
-
-      if (catError || !catData) {
-        throw new Error(`Category resolution failed: ${catError?.message || "Not found"}`);
+      if (!selectedObjective) {
+        setError("Please select a MISSION OBJECTIVE to initialize generation.");
+        setLoading(false);
+        return;
       }
 
-      // 2. Fetch all prompts for this category and pick a random one
-      const { data: prompts, error: promptsError } = await supabase
-        .from("prompts")
-        .select("id")
-        .eq("category_id", catData.id);
+      const blueprint = GROVE_BLUEPRINTS[selectedObjective as keyof typeof GROVE_BLUEPRINTS];
 
-      if (promptsError) {
-        throw new Error(`Prompt retrieval failed: ${promptsError.message}`);
+      if (!blueprint) {
+        setError("Objective not found in the current Grove Repository.");
+        setLoading(false);
+        return;
       }
 
-      if (!prompts || prompts.length === 0) {
-        throw new Error("No localized patterns found for this mission parameter.");
-      }
+      setGeneratedPrompt({
+        ...blueprint,
+        description: "Hard-coded High Output Blueprint verified for production leverage.",
+        category: selectedObjective.toUpperCase()
+      });
 
-      const randomPromptId = prompts[Math.floor(Math.random() * prompts.length)].id;
-
-      const { data: fullPrompt, error: fullError } = await supabase
-        .from("prompts")
-        .select("*")
-        .eq("id", randomPromptId)
-        .single();
-
-      if (fullError || !fullPrompt) {
-        throw new Error(`Data infusion failed: ${fullError?.message || "Null payload"}`);
-      }
-
-      setGeneratedPrompt(fullPrompt);
-    } catch (err: any) {
-      console.error("Generation error:", err);
-      setError(err.message || "An unexpected neural link failure occurred.");
-    } finally {
       setLoading(false);
       setCopied(false);
-    }
+    }, 600);
   };
 
   const copyToClipboard = async () => {
     if (!generatedPrompt) return;
     try {
-      await navigator.clipboard.writeText(generatedPrompt.content);
+      await navigator.clipboard.writeText(generatedPrompt.prompt);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -159,9 +135,9 @@ export default function PromptGeneratorPage() {
                     className="block w-full cursor-pointer rounded-lg border border-white/10 bg-black/50 px-4 py-3 text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500"
                   >
                     <option value="" className="bg-slate-900">Select objective...</option>
-                    {purposes.map((p) => (
-                      <option key={p.value} value={p.value} className="bg-slate-900">
-                        {p.label}
+                    {Object.keys(GROVE_BLUEPRINTS).map((key) => (
+                      <option key={key} value={key} className="bg-slate-900">
+                        {key}
                       </option>
                     ))}
                   </select>
