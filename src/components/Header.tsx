@@ -29,6 +29,12 @@ export default function Header() {
               GENERATOR
             </Link>
             <Link
+              href="/library"
+              className="text-sm font-medium text-slate-300 hover:text-cyan-500 transition-colors tracking-wide"
+            >
+              LIBRARY
+            </Link>
+            <Link
               href="/about"
               className="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors tracking-wide"
             >

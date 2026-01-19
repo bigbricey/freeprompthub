@@ -20,21 +20,25 @@ const aiTools = [
 ];
 
 const GROVE_BLUEPRINTS: Record<string, { title: string; prompt: string }> = {
-  "Content Creation": {
+  "Leverage": {
+    title: "The Managerial Leverage Auditor",
+    prompt: "Review the following code or architecture. Identify which activity provides the highest 'Managerial Leverage'—where a small input of effort will result in the highest output of value. Suggest refactoring for leverage."
+  },
+  "Inflection": {
     title: "The Strategic Inflection Point Detector",
     prompt: "Act as Andy Grove. Analyze the current [INDUSTRY/TOPIC]. Identify potential '10X forces' (competitors, technology, regulation) that could cause a Strategic Inflection Point. Advise on whether to pivot or persevere."
   },
-  "Marketing": {
-    title: "The High Output 1:1 Agenda",
-    prompt: "Create a structured 1:1 meeting agenda for a subordinate with [LOW/HIGH] Task-Relevant Maturity. Focus on 'leading indicators' of trouble and mutual teaching, avoiding simple status updates."
+  "Meetings": {
+    title: "The High Output Meeting Architect",
+    prompt: "Create a structured meeting agenda for [TOPIC]. Identify the 'Chairman' and 'Stakeholders'. Ensure the meeting focuses on 'leading indicators' and provides a high ratio of output to the time spent by attendees. Avoid status updates; focus on decision-making or knowledge exchange."
   },
-  "Business": {
+  "OKRs": {
+    title: "The OKR Framework Architect",
+    prompt: "Define 3 Objectives and 5 Key Results for [PROJECT/GOAL]. Ensure Key Results are measurable, time-bound, and directly verifiable. Avoid vanity metrics; focus only on outcomes that move the needle. Maintain a high standard of precision in your Key Results."
+  },
+  "Production": {
     title: "The Black Box Production Audit",
-    prompt: "Analyze the following business process as a 'Breakfast Factory'. Identify the 'Limiting Step' (the bottleneck) and define 3 'Black Box' metrics to monitor output quality without slowing down production."
-  },
-  "Coding": {
-    title: "The 10x Engineer's Leverage",
-    prompt: "Review the following code or architecture. Identify which activity provides the highest 'Managerial Leverage'—where a small input of effort will result in the highest output of value. Suggest refactoring for leverage."
+    prompt: "Analyze the following business process as a 'Breakfast Factory'. Identify the 'Limiting Step' (the bottleneck) and define 3 'Black Box' metrics to monitor output quality without slowing down production. Apply industrial manufacturing principles to this knowledge-work workflow."
   }
 };
 
