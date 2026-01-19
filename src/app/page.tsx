@@ -180,31 +180,11 @@ export default function Home() {
               Featuring verified agentic blueprints for the 2026 intelligence economy.
             </p>
 
-            {/* Search Bar */}
-            <div className="mx-auto max-w-2xl relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-600/20 to-emerald-600/20 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-              <form onSubmit={handleSearch} className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Initiate Search Sequence..."
-                  className="block w-full rounded-xl border-0 py-4 pl-12 pr-32 text-white bg-[#121214] shadow-2xl ring-1 ring-inset ring-white/10 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-amber-500 sm:text-lg backdrop-blur-xl"
-                />
-                <div className="absolute inset-y-2 right-2">
-                  <button
-                    type="submit"
-                    className="rounded-lg bg-amber-600 px-6 py-2 text-sm font-bold text-black shadow-lg hover:bg-amber-500 transition-all duration-300"
-                  >
-                    ENGAGE
-                  </button>
-                </div>
-              </form>
+            {/* Search Bar - AMPUTATED P0 */}
+            <div className="mx-auto max-w-2xl text-center py-6 border border-white/5 bg-white/5 rounded-2xl backdrop-blur-md">
+              <span className="text-amber-500 font-black uppercase tracking-[0.2em] text-sm">
+                Library Mode: Browse Categories Below
+              </span>
             </div>
           </div>
         </section>

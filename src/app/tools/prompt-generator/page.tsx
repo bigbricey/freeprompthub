@@ -1,275 +1,104 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState } from 'react';
+import { Copy, CheckCircle, Zap } from 'lucide-react'; // Ensure lucide-react is installed
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { createClient } from "@/lib/supabase-client";
 
-interface Prompt {
-  id: string;
-  title: string;
-  description: string;
-  content: string;
-  category_id: string;
-}
-
-const aiTools = [
-  { value: "chatgpt", label: "ChatGPT" },
-  { value: "claude", label: "Claude" },
-  { value: "midjourney", label: "Midjourney" },
-];
-
-const GROVE_BLUEPRINTS: Record<string, { title: string; prompt: string }> = {
-  "Leverage": {
-    title: "The Managerial Leverage Auditor",
-    prompt: "Review the following code or architecture. Identify which activity provides the highest 'Managerial Leverage'—where a small input of effort will result in the highest output of value. Suggest refactoring for leverage."
-  },
-  "Inflection": {
+// HARD CODED DATA - NO IMPORTS FROM OTHER FILES TO PREVENT CRASHES
+const GROVE_BLUEPRINTS = {
+  "Strategy": {
     title: "The Strategic Inflection Point Detector",
-    prompt: "Act as Andy Grove. Analyze the current [INDUSTRY/TOPIC]. Identify potential '10X forces' (competitors, technology, regulation) that could cause a Strategic Inflection Point. Advise on whether to pivot or persevere."
+    prompt: "Act as Andy Grove. Analyze the current [INSERT INDUSTRY]. Identify potential '10X forces' (competitors, technology, regulation) that could cause a Strategic Inflection Point. Advise on whether to pivot or persevere."
   },
-  "Meetings": {
-    title: "The High Output Meeting Architect",
-    prompt: "Create a structured meeting agenda for [TOPIC]. Identify the 'Chairman' and 'Stakeholders'. Ensure the meeting focuses on 'leading indicators' and provides a high ratio of output to the time spent by attendees. Avoid status updates; focus on decision-making or knowledge exchange."
-  },
-  "OKRs": {
-    title: "The OKR Framework Architect",
-    prompt: "Define 3 Objectives and 5 Key Results for [PROJECT/GOAL]. Ensure Key Results are measurable, time-bound, and directly verifiable. Avoid vanity metrics; focus only on outcomes that move the needle. Maintain a high standard of precision in your Key Results."
+  "Management": {
+    title: "The High Output 1:1 Agenda",
+    prompt: "Create a structured 1:1 meeting agenda for a subordinate with [LOW/HIGH] Task-Relevant Maturity. Focus on 'leading indicators' of trouble and mutual teaching, avoiding simple status updates."
   },
   "Production": {
     title: "The Black Box Production Audit",
-    prompt: "Analyze the following business process as a 'Breakfast Factory'. Identify the 'Limiting Step' (the bottleneck) and define 3 'Black Box' metrics to monitor output quality without slowing down production. Apply industrial manufacturing principles to this knowledge-work workflow."
+    prompt: "Analyze the following business process as a 'Breakfast Factory'. Identify the 'Limiting Step' (the bottleneck) and define 3 'Black Box' metrics to monitor output quality without slowing down production."
+  },
+  "Coding": {
+    title: "The 10x Engineer's Leverage",
+    prompt: "Review the following code logic. Identify which activity provides the highest 'Managerial Leverage'—where a small input of effort will result in the highest output of value. Suggest refactoring for leverage."
   }
 };
 
-export default function PromptGeneratorPage() {
-  const [purpose, setPurpose] = useState("");
-  const [aiTool, setAiTool] = useState("");
-  const [generatedPrompt, setGeneratedPrompt] = useState<{ title: string; prompt: string; description: string; category: string } | null>(null);
+export default function GeneratorPage() {
+  const [selectedTopic, setSelectedTopic] = useState("Strategy");
+  const [generatedResult, setGeneratedResult] = useState("");
   const [copied, setCopied] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const handleGenerate = () => {
-    setLoading(true);
-    setError(null);
-
-    // Virtual delay for "scanning" aesthetic
-    setTimeout(() => {
-      const selectedObjective = purpose;
-
-      if (!selectedObjective) {
-        setError("Please select a MISSION OBJECTIVE to initialize generation.");
-        setLoading(false);
-        return;
-      }
-
-      const blueprint = GROVE_BLUEPRINTS[selectedObjective as keyof typeof GROVE_BLUEPRINTS];
-
-      if (!blueprint) {
-        setError("Objective not found in the current Grove Repository.");
-        setLoading(false);
-        return;
-      }
-
-      setGeneratedPrompt({
-        ...blueprint,
-        description: "Hard-coded High Output Blueprint verified for production leverage.",
-        category: selectedObjective.toUpperCase()
-      });
-
-      setLoading(false);
-      setCopied(false);
-    }, 600);
+    // DIRECT MAPPING - NO ASYNC, NO FETCH
+    const blueprint = GROVE_BLUEPRINTS[selectedTopic as keyof typeof GROVE_BLUEPRINTS];
+    setGeneratedResult(blueprint.prompt);
+    setCopied(false);
   };
 
-  const copyToClipboard = async () => {
-    if (!generatedPrompt) return;
-    try {
-      await navigator.clipboard.writeText(generatedPrompt.prompt);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
-    }
+  const handleCopy = () => {
+    navigator.clipboard.writeText(generatedResult);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <div className="min-h-screen relative bg-[#030014]">
-      <div className="stars-bg"></div>
+    <div className="min-h-screen bg-black text-slate-200">
       <Header />
-      <main className="relative z-10">
-        {/* Hero */}
-        <section className="py-16 text-center">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-900/20 px-4 py-1.5 text-sm font-medium text-purple-300 backdrop-blur-md">
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+
+      <main className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto border border-amber-900/30 p-12 rounded-[2.5rem] shadow-2xl bg-white/[0.02] backdrop-blur-xl">
+          <h1 className="text-4xl font-black mb-10 tracking-tighter border-b border-white/10 pb-6 text-white uppercase">
+            <Zap className="inline w-10 h-10 mr-4 text-amber-500 animate-pulse" />
+            EXECUTIVE <span className="text-amber-500">LOGIC</span> ENGINE
+          </h1>
+
+          <div className="space-y-6 mb-10">
+            <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Target Objective</label>
+            <div className="relative group">
+              <select
+                value={selectedTopic}
+                onChange={(e) => setSelectedTopic(e.target.value)}
+                className="w-full bg-black border border-white/10 rounded-2xl p-5 text-white focus:ring-2 focus:ring-amber-500 outline-none appearance-none cursor-pointer transition-all hover:border-white/20"
+              >
+                {Object.keys(GROVE_BLUEPRINTS).map((key) => (
+                  <option key={key} value={key}>{key.toUpperCase()}</option>
+                ))}
+              </select>
+              <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-                FREE TOOL ACCESS
-              </div>
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl drop-shadow-[0_0_25px_rgba(168,85,247,0.5)]">
-                AI PROMPT <span className="text-gradient-cosmic">GENERATOR</span>
-              </h1>
-              <p className="mt-4 text-lg text-slate-400">
-                Select your mission parameters. We will retrieve the optimal prompt from our neural network.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Generator Tool */}
-        <section className="pb-24">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="holo-card rounded-2xl p-8">
-              <div className="space-y-6">
-                {/* Purpose Select */}
-                <div>
-                  <label
-                    htmlFor="purpose"
-                    className="block text-sm font-bold text-cyan-400 tracking-wide mb-2"
-                  >
-                    // MISSION OBJECTIVE
-                  </label>
-                  <select
-                    id="purpose"
-                    value={purpose}
-                    onChange={(e) => setPurpose(e.target.value)}
-                    className="block w-full cursor-pointer rounded-lg border border-white/10 bg-black/50 px-4 py-3 text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500"
-                  >
-                    <option value="" className="bg-slate-900">Select objective...</option>
-                    {Object.keys(GROVE_BLUEPRINTS).map((key) => (
-                      <option key={key} value={key} className="bg-slate-900">
-                        {key}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* AI Tool Select */}
-                <div>
-                  <label
-                    htmlFor="aiTool"
-                    className="block text-sm font-bold text-purple-400 tracking-wide mb-2"
-                  >
-                    // AI MODEL
-                  </label>
-                  <select
-                    id="aiTool"
-                    value={aiTool}
-                    onChange={(e) => setAiTool(e.target.value)}
-                    className="block w-full cursor-pointer rounded-lg border border-white/10 bg-black/50 px-4 py-3 text-white focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
-                  >
-                    <option value="" className="bg-slate-900">Select model...</option>
-                    {aiTools.map((tool) => (
-                      <option key={tool.value} value={tool.value} className="bg-slate-900">
-                        {tool.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Generate Button */}
-                <button
-                  onClick={handleGenerate}
-                  disabled={loading}
-                  className="w-full rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 px-6 py-4 text-lg font-bold text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
-                >
-                  {loading ? "SCANNING REPOSITORY..." : "INITIALIZE GENERATION"}
-                </button>
-
-                {/* Error Display */}
-                {error && (
-                  <div className="mt-4 rounded-lg border border-red-500/30 bg-red-900/10 p-4 backdrop-blur-sm animate-in fade-in zoom-in-95 duration-300">
-                    <div className="flex items-center gap-3 text-red-400">
-                      <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                      </svg>
-                      <span className="text-sm font-bold tracking-tight uppercase tracking-wider">
-                        {error}
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Generated Prompt */}
-              {generatedPrompt && (
-                <div className="mt-8 rounded-xl border border-white/10 bg-black/40 p-6 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <div className="mb-4 flex items-center justify-between border-b border-white/5 pb-4">
-                    <div>
-                      <h3 className="text-lg font-bold text-white">
-                        {generatedPrompt.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-slate-400">
-                        {generatedPrompt.description}
-                      </p>
-                    </div>
-                    <span className="rounded-full border border-cyan-500/30 bg-cyan-950/30 px-3 py-1 text-xs font-mono text-cyan-400">
-                      {generatedPrompt.category.toUpperCase()}
-                    </span>
-                  </div>
-
-                  <div className="rounded-lg bg-black/50 border border-white/5 p-4">
-                    <pre className="whitespace-pre-wrap font-mono text-sm text-slate-300">
-                      {generatedPrompt.prompt}
-                    </pre>
-                  </div>
-
-                  <div className="mt-6 flex gap-3">
-                    <button
-                      onClick={copyToClipboard}
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-white/10 border border-white/10 px-4 py-2.5 text-sm font-bold text-white transition-all hover:bg-white/20 hover:border-white/30"
-                    >
-                      {copied ? (
-                        <>
-                          <svg className="h-4 w-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          DATA COPIED
-                        </>
-                      ) : (
-                        <>
-                          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                          </svg>
-                          COPY DATA
-                        </>
-                      )}
-                    </button>
-                    <button
-                      onClick={handleGenerate}
-                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-2.5 text-sm font-bold text-slate-300 transition-colors hover:text-white hover:border-white/30"
-                    >
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                      </svg>
-                      RETRY
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Tips */}
-            <div className="mt-12 grid gap-4 sm:grid-cols-2">
-              <div className="holo-card rounded-lg p-4">
-                <h3 className="font-bold text-cyan-400 text-sm mb-1">// BE SPECIFIC</h3>
-                <p className="text-xs text-slate-400">
-                  Replace placeholders with precise data for optimal output.
-                </p>
-              </div>
-              <div className="holo-card rounded-lg p-4">
-                <h3 className="font-bold text-purple-400 text-sm mb-1">// ITERATE</h3>
-                <p className="text-xs text-slate-400">
-                  Refine and regenerate to achieve maximum efficiency.
-                </p>
               </div>
             </div>
           </div>
-        </section>
+
+          <button
+            onClick={handleGenerate}
+            className="w-full py-6 bg-amber-500 hover:bg-amber-400 text-black font-black uppercase tracking-[0.2em] transition-all rounded-2xl shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] hover:-translate-y-1"
+          >
+            Initialize Generation
+          </button>
+
+          {generatedResult && (
+            <div className="mt-12 p-8 bg-white/[0.03] border border-amber-500/30 rounded-3xl relative animate-in fade-in slide-in-from-bottom-4 group">
+              <label className="block text-[10px] font-black text-amber-600 mb-4 uppercase tracking-[0.3em]">OUTPUT STREAM</label>
+              <div className="pr-12">
+                <p className="text-xl leading-relaxed text-slate-100 font-medium italic">"{generatedResult}"</p>
+              </div>
+              <button
+                onClick={handleCopy}
+                className="absolute top-6 right-6 p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-amber-500 transition-all active:scale-95"
+                title="Copy to Clipboard"
+              >
+                {copied ? <CheckCircle className="w-6 h-6" /> : <Copy className="w-6 h-6" />}
+              </button>
+            </div>
+          )}
+        </div>
       </main>
+
       <Footer />
     </div>
   );
