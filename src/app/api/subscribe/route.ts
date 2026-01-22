@@ -1,4 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,20 +26,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Log the email for now - connect to email service later
-    // Options: Vercel KV, Vercel Postgres, Formspree, EmailOctopus, ConvertKit, etc.
-    console.log("New subscriber:", {
-      email: email.toLowerCase(),
-      subscribedAt: new Date().toISOString(),
-    });
+    const normalizedEmail = email.toLowerCase().trim();
 
-    // TODO: Connect to email service
-    // Example with Formspree:
-    // await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ email }),
-    // });
+    // Store in Supabase
+    const { error } = await supabase
+      .from("subscribers")
+      .upsert(
+        { email: normalizedEmail, subscribed_at: new Date().toISOString() },
+        { onConflict: "email" }
+      );
+
+    if (error) {
+      console.error("Supabase error:", error);
+      // If table doesn't exist, just log it (graceful degradation)
+      if (error.code === "42P01") {
+        console.log("Subscribers table not created yet. Email:", normalizedEmail);
+      } else {
+        throw error;
+      }
+    }
+
+    console.log("New subscriber:", normalizedEmail);
 
     return NextResponse.json(
       { message: "Successfully subscribed!" },
@@ -49,6 +62,17 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  // Return a placeholder count for now
-  return NextResponse.json({ count: 0 });
+  try {
+    const { count, error } = await supabase
+      .from("subscribers")
+      .select("*", { count: "exact", head: true });
+
+    if (error) {
+      return NextResponse.json({ count: 0 });
+    }
+
+    return NextResponse.json({ count: count || 0 });
+  } catch {
+    return NextResponse.json({ count: 0 });
+  }
 }

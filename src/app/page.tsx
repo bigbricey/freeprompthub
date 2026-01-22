@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import EmailPopup from "@/components/EmailPopup";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -180,12 +181,24 @@ export default function Home() {
               Featuring verified agentic blueprints for the 2026 intelligence economy.
             </p>
 
-            {/* Search Bar - AMPUTATED P0 */}
-            <div className="mx-auto max-w-2xl text-center py-6 border border-white/5 bg-white/5 rounded-2xl backdrop-blur-md">
-              <span className="text-amber-500 font-black uppercase tracking-[0.2em] text-sm">
-                Library Mode: Browse Categories Below
-              </span>
-            </div>
+            {/* Search Bar - RE-ENABLED */}
+            <form onSubmit={handleSearch} className="mx-auto max-w-2xl">
+              <div className="relative group">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search 2,000+ AI prompts..."
+                  className="w-full px-6 py-5 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all text-lg backdrop-blur-md"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-xl transition-all hover:shadow-[0_0_20px_rgba(245,158,11,0.3)]"
+                >
+                  SEARCH
+                </button>
+              </div>
+            </form>
           </div>
         </section>
 
@@ -302,6 +315,7 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      <EmailPopup />
     </div>
   );
 }
