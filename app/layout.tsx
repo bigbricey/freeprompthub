@@ -1,14 +1,27 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
-  title: "FreePromptHub — Free AI Prompts & Premium Guides",
+  title: "FreePromptHub — Free AI Prompts & Premium Guides for Beginners",
   description:
-    "Copy-paste AI prompts for Etsy sellers, content creators, and beginners. Free resources plus premium extraction guides.",
+    "150+ free AI prompts for ChatGPT, Claude, and Midjourney. Plus premium guides with tested frameworks from top sellers. Start making money with AI today.",
+  keywords: [
+    "AI prompts",
+    "free prompts",
+    "ChatGPT prompts",
+    "Claude prompts",
+    "Etsy AI",
+    "AI for beginners",
+    "prompt engineering",
+    "digital products",
+  ],
   openGraph: {
     title: "FreePromptHub — Free AI Prompts & Premium Guides",
     description:
-      "Copy-paste AI prompts for Etsy sellers, content creators, and beginners.",
+      "150+ free AI prompts and premium extraction guides. Built for beginners.",
     url: "https://freeprompthub.com",
     siteName: "FreePromptHub",
     type: "website",
@@ -17,12 +30,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-neutral-950 text-neutral-100 antialiased">
+      <body className={`${inter.className} bg-gray-950 text-gray-100 antialiased`}>
         {children}
       </body>
     </html>
